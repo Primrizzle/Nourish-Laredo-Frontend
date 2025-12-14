@@ -3,6 +3,10 @@
     --secondary: #3AAFA9;
     --tertiary: #F6C667; 
     --black: #2C2C2C;
+    --beige: #F5EDDC;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Quicksand', sans-serif;
+    --font-tertiary: 'Caveat Brush', sans-serif;
 }
 @import "tailwindcss";
 
