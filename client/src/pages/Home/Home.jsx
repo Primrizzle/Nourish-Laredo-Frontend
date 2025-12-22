@@ -46,14 +46,16 @@ export default function Home() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/donate"
-                className="h-10 px-6 rounded-md bg-(--primary) text-white font-semibold flex items-center justify-center"
+                className="h-10 px-6 rounded-md bg-(--primary) text-white font-semibold flex items-center justify-center hover:bg-white hover:text-(--primary)" 
+                style={{ fontFamily: 'Quicksand'}}
               >
                 Donate Now
               </a>
 
               <a
                 href="/get-involved"
-                className="h-10 px-6 rounded-md bg-white text-(--primary) font-semibold flex items-center justify-center"
+                className="h-10 px-6 rounded-md bg-white text-(--primary) font-semibold flex items-center justify-center hover:bg-(--primary) hover:text-white"
+                style={{ fontFamily: 'Quicksand'}}
               >
                 Volunteer
               </a>
