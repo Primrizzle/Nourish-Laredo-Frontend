@@ -3,7 +3,7 @@ import {
   Mail,
   Phone,
   MapPin,
-} from "lucide-react"; // lightweight, optional icons
+} from "lucide-react"; 
 
 export default function Footer() {
   return (
@@ -77,7 +77,7 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Your email"
-              className="flex-1 px-3 py-2 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[var(--secondary)]"
+              className="flex-1 px-3 py-2 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-(--secondary)"
             />
             <button
               type="submit"

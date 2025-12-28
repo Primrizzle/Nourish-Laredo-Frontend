@@ -1,3 +1,454 @@
+import GroupPhoto from "../../assets/contact/group-photo-restaurant.jpg";
+import Navigating from "../../assets/contact/Navigating.jpg";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Send,
+} from "lucide-react";
+
 export default function Contact() {
-  return <div>Contact page is working</div>;
+  return (
+    <div className="w-full">
+
+      {/* ===================== */}
+      {/* Hero Section */}
+      {/* ===================== */}
+      <section
+        className="
+          relative
+          flex
+          items-center
+          justify-center
+          h-[60vh]
+          min-h-[420px]
+          w-full
+          overflow-hidden
+        "
+      >
+        {/* Background Image */}
+        <img
+          src={GroupPhoto}
+          alt="Nourish Laredo volunteers"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "50% 45%" }}
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-(--secondary)/70" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center text-white">
+          <h1
+            className="mb-4 text-4xl font-semibold md:text-5xl lg:text-6xl"
+            style={{ fontFamily: "Poppins" }}
+          >
+            Let’s Connect
+          </h1>
+
+          <p
+            className="text-lg md:text-xl text-white/90"
+            style={{ fontFamily: "Quicksand" }}
+          >
+            We’d love to hear from you — together, we can nourish our community.
+          </p>
+        </div>
+      </section>
+
+      {/* ===================== */}
+      {/* Contact Section */}
+      {/* ===================== */}
+      <section className="w-full bg-[#FAF7F2] py-24">
+        <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+
+            {/* Contact Form */}
+            <div className="lg:col-span-2 rounded-xl bg-white p-8 shadow-sm">
+              <h2
+                className="mb-2 text-2xl font-semibold text-(--black)"
+                style={{ fontFamily: "Poppins" }}
+              >
+                Send Us a Message
+              </h2>
+
+              <p
+                className="mb-6 text-(--black)/70"
+                style={{ fontFamily: "Quicksand" }}
+              >
+                Fill out the form below and we’ll get back to you as soon as possible.
+              </p>
+
+              <form className="space-y-5">
+                {/* Name */}
+                <div>
+                  <label className="text-sm font-medium text-(--black)">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    className="mt-1 w-full rounded-md bg-[#FAF7F2] px-4 py-3 outline-none"
+                  />
+                </div>
+
+                {/* Email + Phone */}
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div>
+                    <label className="text-sm font-medium text-(--black)">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="your@email.com"
+                      className="mt-1 w-full rounded-md bg-[#FAF7F2] px-4 py-3 outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium text-(--black)">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="(956) 555-0000"
+                      className="mt-1 w-full rounded-md bg-[#FAF7F2] px-4 py-3 outline-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Subject */}
+                <div>
+                  <label className="text-sm font-medium text-(--black)">
+                    Subject *
+                  </label>
+                  <select className="mt-1 w-full rounded-md bg-[#FAF7F2] px-4 py-3 outline-none">
+                    <option>Select a subject</option>
+                    <option>Volunteering</option>
+                    <option>Donations</option>
+                    <option>Partnerships</option>
+                    <option>General Inquiry</option>
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="text-sm font-medium text-(--black)">
+                    Message *
+                  </label>
+                  <textarea
+                    rows="4"
+                    placeholder="Tell us how we can help..."
+                    className="mt-1 w-full rounded-md bg-[#FAF7F2] px-4 py-3 outline-none"
+                  />
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="button"
+                  className="
+                    mt-4
+                    flex
+                    w-full
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-md
+                    bg-[#E85C45]
+                    px-6
+                    py-3
+                    font-semibold
+                    text-white
+                    transition
+                    hover:opacity-90
+                  "
+                  style={{ fontFamily: "Quicksand" }}
+                >
+                  <Send className="h-4 w-4" />
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="mb-4 font-semibold text-(--black)">
+                  Contact Information
+                </h3>
+
+                <ul className="space-y-4 text-sm text-gray-600">
+                  <li className="flex gap-3">
+                    <MapPin className="h-4 w-4 text-(--secondary) mt-0.5" />
+                    <span>
+                      1234 San Agustin Ave<br />
+                      Laredo, TX 78040
+                    </span>
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <Mail className="h-4 w-4 text-(--secondary)" />
+                    hello@nourishlaredo.org
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <Phone className="h-4 w-4 text-(--secondary)" />
+                    (956) 555-2048
+                  </li>
+
+                  <li className="flex items-start gap-3">
+                    <Clock className="h-4 w-4 text-(--secondary) mt-0.5" />
+                    <span>
+                      Monday – Saturday<br />
+                      9:00 AM – 5:00 PM
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Social */}
+              <div className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="mb-4 font-semibold text-(--black)">
+                  Follow Us
+                </h3>
+
+                <div className="flex gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-(--secondary)">
+                    <Facebook className="h-5 w-5 text-white" />
+                  </div>
+
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E85C45]">
+                    <Instagram className="h-5 w-5 text-white" />
+                  </div>
+
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4C76C]">
+                    <Linkedin className="h-5 w-5 text-(--black)" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== */}
+      {/* Contact Section */}
+      {/* ===================== */}
+      <section className="w-full bg-white py-24">
+      <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
+
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h2
+            className="text-3xl sm:text-4xl font-semibold text-(--black)"
+            style={{ fontFamily: "Poppins" }}
+          >
+            Find Us in Downtown Laredo
+          </h2>
+
+          <p
+            className="mt-4 text-(--black)/70"
+            style={{ fontFamily: "Quicksand" }}
+          >
+            Visit our office or stop by during one of our events
+          </p>
+        </div>
+
+        {/* Image Card */}
+        <div className="relative overflow-hidden rounded-xl shadow-sm">
+          <img
+            src={Navigating}
+            alt="Navigating to Nourish Laredo"
+            className="h-[360px] w-full object-cover"
+            style={{ objectPosition: "50% 50%" }}
+          />
+
+          {/* Address Pill */}
+          <div className="
+            absolute
+            inset-x-0
+            bottom-6
+            flex
+            justify-center
+          ">
+            <div className="
+              flex
+              items-center
+              gap-2
+              rounded-full
+              bg-white
+              px-5
+              py-3
+              shadow-md
+              text-sm
+              font-medium
+              text-(--black)
+              border
+              border-(--secondary)
+            "
+              style={{ fontFamily: "Quicksand" }}>
+              <MapPin className="h-4 w-4 text-(--secondary)"/>
+              1234 San Agustin Ave, Laredo, TX
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10 flex justify-center">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=1234+San+Agustin+Ave+Laredo+TX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              rounded-md
+              bg-(--secondary)
+              px-6
+              py-3
+              text-sm
+              font-semibold
+              text-white
+              transition
+              hover:opacity-90
+            "
+            style={{ fontFamily: "Quicksand" }}
+          >
+            Get Directions
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <section className="w-full bg-[#FAF7F2] py-24">
+      <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
+
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h2
+            className="text-3xl sm:text-4xl font-semibold text-(--black)"
+            style={{ fontFamily: "Poppins" }}
+          >
+            Meet the Sponsors Behind Nourish Laredo
+          </h2>
+
+          <p
+            className="mt-4 text-(--black)/70"
+            style={{ fontFamily: "Quicksand" }}
+          >
+            Our sponsors help make our work possible by organizing and supporting the events that strengthen our community.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+          {/* Angie Tellez */}
+          <div className="bg-white rounded-xl p-8 text-center shadow-sm">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-(--secondary)">
+              <span
+                className="text-xl font-semibold text-white"
+                style={{ fontFamily: "Poppins" }}
+              >
+                A
+              </span>
+            </div>
+
+            <h3
+              className="text-lg font-semibold text-(--black)"
+              style={{ fontFamily: "Poppins" }}
+            >
+              Angie Tellez
+            </h3>
+
+            <p
+              className="mt-1 text-sm text-(--black)/60"
+              style={{ fontFamily: "Quicksand" }}
+            >
+              Sponsor & Event Coordinator
+            </p>
+
+            <button
+              className="
+                mt-6
+                inline-flex
+                items-center
+                justify-center
+                rounded-md
+                border
+                border-(--secondary)
+                px-4
+                py-2
+                text-sm
+                font-semibold
+                text-(--secondary)
+                transition
+                hover:bg-(--secondary)
+                hover:text-white
+              "
+              style={{ fontFamily: "Quicksand" }}
+            >
+              Message Angie
+            </button>
+          </div>
+
+          {/* Mari Canamar */}
+          <div className="bg-white rounded-xl p-8 text-center shadow-sm">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-(--primary)">
+              <span
+                className="text-xl font-semibold text-white"
+                style={{ fontFamily: "Poppins" }}
+              >
+                M
+              </span>
+            </div>
+
+            <h3
+              className="text-lg font-semibold text-(--black)"
+              style={{ fontFamily: "Poppins" }}
+            >
+              Marisela Canamar
+            </h3>
+
+            <p
+              className="mt-1 text-sm text-(--black)/60"
+              style={{ fontFamily: "Quicksand" }}
+            >
+              Sponsor & Event Coordinator
+            </p>
+
+            <button
+              className="
+                mt-6
+                inline-flex
+                items-center
+                justify-center
+                rounded-md
+                border
+                border-(--primary)
+                px-4
+                py-2
+                text-sm
+                font-semibold
+                text-(--primary)
+                transition
+                hover:bg-(--primary)
+                hover:text-white
+              "
+              style={{ fontFamily: "Quicksand" }}
+            >
+              Message Marisela
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    </div>
+  );
 }
