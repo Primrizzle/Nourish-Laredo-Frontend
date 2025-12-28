@@ -15,20 +15,23 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* Every page rendered inside MainLayout */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/get-involved" element={<GetInvolved />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/contact" element={<Contact />} />
+        {/* Layout route MUST have a path */}
+        <Route path="/" element={<MainLayout />}>
+          
+          {/* Home should be index, not "/" */}
+          <Route index element={<Home />} />
+
+          <Route path="about" element={<About />} />
+          <Route path="programs" element={<Programs />} />
+          <Route path="events" element={<Events />} />
+          <Route path="getinvolved" element={<GetInvolved />} />
+          <Route path="partners" element={<Partners />} />
+          <Route path="donate" element={<Donate />} />
+          <Route path="contact" element={<Contact />} />
+
         </Route>
 
       </Routes>
     </BrowserRouter>
   );
 }
- 
