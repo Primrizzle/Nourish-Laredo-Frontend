@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Link} from "react-router-dom";
 
 import AboutHero from "../../assets/about/AboutHeroImage.jpg";
 import WhiteTarget from "../../components/icons/WhiteTargetIcon.jsx";
@@ -501,7 +502,8 @@ export default function About() {
 
           {/* CTA */}
           <div className="mt-16">
-            <button
+            <Link
+              to="/programs"
               className="
                 rounded-lg
                 bg-(--secondary)
@@ -516,11 +518,11 @@ export default function About() {
               style={{ fontFamily: "Quicksand" }}
             >
               Learn More About Our Programs
-            </button>
+            </Link>
           </div>
         </div>
       </section>
-              {/* Call to Action */}
+      {/* Call to Action */}
         <section className="relative w-full overflow-hidden">
           {/* Background Image */}
           <img
@@ -552,41 +554,45 @@ export default function About() {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <button
-                className="
-                  rounded-lg
-                  bg-[#F26B4F]
-                  px-8
-                  py-3
-                  text-sm
-                  font-semibold
-                  text-white
-                  transition
-                  hover:opacity-90
-                "
-                style={{ fontFamily: "Quicksand" }}
-              >
-                Volunteer With Us
-              </button>
+            {/* Buttons */}
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Link
+                  to="/get-involved"
+                  className="
+                    rounded-lg
+                    bg-[#F26B4F]
+                    px-8
+                    py-3
+                    text-sm
+                    font-semibold
+                    text-white
+                    transition
+                    hover:opacity-90
+                  "
+                  style={{ fontFamily: "Quicksand" }}
+                >
+                  Volunteer With Us
+                </Link>
 
-              <button
-                className="
-                  rounded-lg
-                  bg-white
-                  px-8
-                  py-3
-                  text-sm
-                  font-semibold
-                  text-(--black)
-                  transition
-                  hover:bg-white/90
-                "
-                style={{ fontFamily: "Quicksand" }}
-              >
-                Donate to Support Our Work
-              </button>
-            </div>
+                <Link
+                  to="/donate"
+                  className="
+                    rounded-lg
+                    bg-white
+                    px-8
+                    py-3
+                    text-sm
+                    font-semibold
+                    text-(--black)
+                    transition
+                    hover:bg-white/90
+                  "
+                  style={{ fontFamily: "Quicksand" }}
+                >
+                  Donate to Support Our Work
+                </Link>
+              </div>
+
           </div>
         </section>
 
