@@ -59,50 +59,7 @@ export default function Programs() {
           address food insecurity while building a stronger, more connected
           community.
         </p>
-
-        {/* CTAs */}
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link
-            to="/get-involved"
-            className="
-            rounded-lg
-            bg-(--primary)
-            px-6
-            py-3
-            text-sm
-            font-semibold
-          text-white
-            transition
-            hover:bg-(--white)
-            hover:text-(--primary)
-            hover:border
-            "
-            style={{ fontFamily: "Quicksand" }}
-            >
-            See How You Can Help
-          </Link>
-
-        {/* Donate Now */}
-        <Link
-          to="/donate"
-          className="
-            rounded-lg
-          bg-white
-            px-6
-            py-3
-            text-sm
-            font-semibold
-            text-(--primary)
-            transition
-            hover:bg-(--primary)
-            hover:text-(--white)
-            hover:border
-            "
-            style={{ fontFamily: "Quicksand" }}
-            >
-              Donate Now
-          </Link>
-        </div>
+        
       </div>
     </section>
     {/* What We Do */}

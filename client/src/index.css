@@ -9,5 +9,15 @@
     --font-secondary: 'Quicksand', sans-serif;
     --font-tertiary: 'Caveat Brush', sans-serif;
 }
+
+label {
+  font-family: var(--font-primary);
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-secondary);
+}
 @import "tailwindcss";
 

@@ -44,46 +44,7 @@ export default function Events() {
             Connecting hearts and helping hands across Laredo.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link
-              to="/events#upcoming"
-              className="
-                rounded-lg
-                bg-(--primary)
-                px-6
-                py-3
-                text-sm
-                font-semibold
-                text-white
-                transition
-                hover:bg-white
-                hover:text-(--primary)
-              "
-              style={{ fontFamily: "Quicksand" }}
-            >
-              See Upcoming Events
-            </Link>
-
-            <Link
-              to="/contact"
-              className="
-                rounded-lg
-                bg-white
-                px-6
-                py-3
-                text-sm
-                font-semibold
-                text-(--primary)
-                transition
-                hover:bg-(--primary)
-                hover:text-white
-              "
-              style={{ fontFamily: "Quicksand" }}
-            >
-              Host a Fundraiser
-            </Link>
-          </div>
+        
         </div>
       </section>
     </div>

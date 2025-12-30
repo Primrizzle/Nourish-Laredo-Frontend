@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"; 
+
 import GroupPhoto from "../../assets/contact/group-photo-restaurant.jpg";
 import Navigating from "../../assets/contact/Navigating.jpg";
 import {
@@ -5,11 +7,10 @@ import {
   Phone,
   MapPin,
   Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
   Send,
 } from "lucide-react";
+
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -176,11 +177,13 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="rounded-xl bg-white p-6 shadow-sm">
-                <h3 className="mb-4 font-semibold text-(--black)">
+                <h3 className="mb-4 font-semibold text-(--black)"
+                    style={{ fontFamily: "Poppins"}}>
                   Contact Information
                 </h3>
 
-                <ul className="space-y-4 text-sm text-gray-600">
+                <ul className="space-y-4 text-sm text-gray-600"
+                    style={{ fontFamily: "Quicksand" }}>
                   <li className="flex gap-3">
                     <MapPin className="h-4 w-4 text-(--secondary) mt-0.5" />
                     <span>
@@ -198,14 +201,6 @@ export default function Contact() {
                     <Phone className="h-4 w-4 text-(--secondary)" />
                     (956) 555-2048
                   </li>
-
-                  <li className="flex items-start gap-3">
-                    <Clock className="h-4 w-4 text-(--secondary) mt-0.5" />
-                    <span>
-                      Monday – Saturday<br />
-                      9:00 AM – 5:00 PM
-                    </span>
-                  </li>
                 </ul>
               </div>
 
@@ -217,15 +212,15 @@ export default function Contact() {
 
                 <div className="flex gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-(--secondary)">
-                    <Facebook className="h-5 w-5 text-white" />
+                    <FaFacebookF className="h-5 w-5 text-(--white)" />
                   </div>
 
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E85C45]">
-                    <Instagram className="h-5 w-5 text-white" />
+                    <FaInstagram className="h-5 w-5 text-(--white)" />
                   </div>
 
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4C76C]">
-                    <Linkedin className="h-5 w-5 text-(--black)" />
+                    <FaLinkedinIn className="h-5 w-5 text-(--white)" />
                   </div>
                 </div>
               </div>
@@ -325,6 +320,10 @@ export default function Contact() {
 
       </div>
     </section>
+
+    {/* ===================== */}
+    {/* Contact Section */}
+    {/* ===================== */}
     <section className="w-full bg-[#FAF7F2] py-24">
       <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
 
@@ -449,6 +448,160 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    {/* ===================== */}
+    {/*      FAQ Section      */}
+    {/* ===================== */}
+    {/* FAQ Section */}
+<section className="w-full bg-white py-24">
+  <div className="mx-auto max-w-[900px] px-6 sm:px-8 text-center">
+
+    {/* Header */}
+    <h2
+      className="text-3xl sm:text-4xl font-semibold text-(--black)"
+      style={{ fontFamily: "Poppins" }}
+    >
+      Frequently Asked Questions
+    </h2>
+
+    <p
+      className="mt-4 text-(--black)/70"
+      style={{ fontFamily: "Quicksand" }}
+    >
+      Quick answers to common questions
+    </p>
+
+    {/* FAQ Cards */}
+    <div className="mt-16 space-y-6 text-left">
+
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+        <h4 className="font-semibold text-(--secondary)"
+            style={{ fontFamily: "Poppins" }}>
+          How can I volunteer?
+        </h4>
+        <p className="mt-2 text-sm text-gray-600"
+           style={{ fontFamily: "Quicksand" }}>
+          Visit our Get Involved page to sign up or reach out to our Volunteer Coordinator.
+        </p>
+      </div>
+
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+        <h4 className="font-semibold text-(--secondary)"
+            style={{ fontFamily: "Poppins" }}>
+          Do you accept food donations?
+        </h4>
+        <p className="mt-2 text-sm text-gray-600"
+           style={{ fontFamily: "Quicksand" }}>
+          Yes! We accept non-perishable food items and fresh produce from local partners.
+        </p>
+      </div>
+
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+        <h4 className="font-semibold text-(--secondary)"
+            style={{ fontFamily: "Poppins" }}>
+          How can local businesses partner with you?
+        </h4>
+        <p className="mt-2 text-sm text-gray-600"
+            style={{ fontFamily: "Quicksand" }}>
+          Contact our Sponsorships team to discuss collaboration opportunities and sponsorships.
+        </p>
+      </div>
+    </div>
+
+    {/* Read All FAQs Button */}
+    <div className="mt-12">
+      <button
+        className="
+          rounded-md
+          border
+          border-(--secondary)
+          px-6
+          py-3
+          text-sm
+          font-semibold
+          text-(--secondary)
+          transition
+          hover:bg-(--secondary)
+          hover:text-white
+        "
+        style={{ fontFamily: "Quicksand" }}
+      >
+        Read All FAQs
+      </button>
+    </div>
+  </div>
+</section>
+{/* ==================== */}
+{/* Final Call to Action */}
+{/* ==================== */}
+<section className="relative w-full bg-[#EEF6F4] py-24 overflow-hidden">
+  <div className="mx-auto max-w-[1199px] px-6 sm:px-8 text-center relative z-10">
+
+    <h2
+      className="text-3xl sm:text-4xl font-semibold text-(--black)"
+      style={{ fontFamily: "Poppins" }}
+    >
+      Together, We Can Make Laredo Stronger
+    </h2>
+
+    <p
+      className="mt-4 max-w-2xl mx-auto text-(--black)/70"
+      style={{ fontFamily: "Quicksand" }}
+    >
+      Whether you’re interested in volunteering, partnering with us, or supporting our mission, we’d love to help you get involved.
+    </p>
+
+    {/* CTA Buttons */}
+      <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <Link
+          to="/getinvolved"
+          className="
+            inline-flex
+            items-center
+            justify-center
+            rounded-md
+            bg-(--secondary)
+            px-6
+            py-3
+            text-sm
+            font-semibold
+            text-white
+            transition
+            hover:opacity-90
+          "
+          style={{ fontFamily: "Quicksand" }}
+        >
+          Volunteer With Us
+        </Link>
+
+        <Link
+          to="/events"
+          className="
+            inline-flex
+            items-center
+            justify-center
+            rounded-md
+            bg-[#F26B4F]
+            px-6
+            py-3
+            text-sm
+            font-semibold
+            text-white
+            transition
+            hover:opacity-90
+          "
+          style={{ fontFamily: "Quicksand" }}
+        >
+          See Upcoming Events
+        </Link>
+      </div>
+
+  </div>
+
+  {/* Decorative Circles */}
+  <div className="absolute left-10 bottom-10 h-24 w-24 rounded-full bg-[#F7E8C8]" />
+  <div className="absolute right-16 top-12 h-20 w-20 rounded-full bg-[#D6ECE8]" />
+</section>
+
     </div>
   );
 }

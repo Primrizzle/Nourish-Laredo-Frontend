@@ -1,16 +1,20 @@
 import {Link} from "react-router-dom";
 
+import {
+  Wheat,
+  Heart,
+  Users,
+  Money,
+  handHeart,
+  Handshake,
+  share2,
+} from "lucide-react";
+
 import HonorSociety from "../../assets/getinvolved/honor-society-delivery.jpg";
 import BackseatBags from "../../assets/getinvolved/bags-in-the-backseat.png";
 import TruckLoading from "../../assets/getinvolved/loading-the-truck.jpg";
 import HelpingHands from "../../assets/getinvolved/helping-hands.jpg";
-import IncreasingArrow from "../../components/icons/IncreasingArrowIcon.jsx";
-import HeartIcon from "../../components/icons/HeartIcon.jsx";
-import VolunteersIcon from "../../components/icons/VolunteerIcon.jsx";
-import GivingIcon from "../../components/icons/GivingIcon.jsx";
-import MoneyIcon from "../../components/icons/MoneyIcon.jsx";
-import HandshakeIcon from "../../components/icons/HandshakeIcon.jsx";
-import NetworkingIcon from "../../components/icons/NetworkingIcon.jsx";
+
 
 export default function GetInvolved() {
   return (<div>
@@ -90,7 +94,7 @@ export default function GetInvolved() {
           />
 
           <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-(--secondary)">
-            <HeartIcon className="h-6 w-6 text-white" />
+            <Heart className="h-6 w-6 text-white" />
           </div>
         </div>
 
@@ -123,7 +127,7 @@ export default function GetInvolved() {
           />
 
           <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-(--secondary)">
-            <VolunteersIcon className="h-6 w-6 text-white" />
+            <Users className="h-6 w-6 text-white" />
           </div>
         </div>
 
@@ -156,7 +160,7 @@ export default function GetInvolved() {
           />
 
           <div className="absolute left-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-(--secondary)">
-            <IncreasingArrow className="h-6 w-6 text-white" />
+            <Wheat className="h-6 w-6 text-(--white)" />
           </div>
         </div>
 
@@ -208,7 +212,7 @@ export default function GetInvolved() {
       {/* Volunteer */}
       <div className="rounded-xl border-2 border-(--secondary) p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-(--secondary)">
-          <GivingIcon className="h-6 w-6 text-white" />
+          <handHeart className="h-6 w-6 text-white" />
         </div>
 
         <h3
@@ -251,7 +255,7 @@ export default function GetInvolved() {
       {/* Donation */}
       <div className="rounded-xl border-2 border-[#F26B4F] p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#F26B4F]">
-          <MoneyIcon className="h-6 w-6 text-white" />
+          <Money className="h-6 w-6 text-white" />
         </div>
 
         <h3
@@ -294,7 +298,7 @@ export default function GetInvolved() {
       {/* Partner */}
       <div className="rounded-xl border-2 border-[#F7C96A] p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#F7C96A]">
-          <HandshakeIcon className="h-6 w-6 text-(--black)" />
+          <Handshake className="h-6 w-6 text-(--black)" />
         </div>
 
         <h3
@@ -337,7 +341,7 @@ export default function GetInvolved() {
       {/* Spread the Word */}
       <div className="rounded-xl border-2 border-(--secondary) p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-(--secondary)">
-          <NetworkingIcon className="h-6 w-6 text-white" />
+          <share2 className="h-6 w-6 text-white" />
         </div>
 
         <h3
@@ -531,7 +535,7 @@ export default function GetInvolved() {
       {/* Testimonial 1 */}
       <div className="relative rounded-xl bg-[#FAF7F2] p-8">
         <div className="absolute -top-4 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#F7C96A]">
-          <HeartIcon className="h-5 w-5 text-(--black)" />
+          <Heart className="h-5 w-5 text-(--black)" />
         </div>
 
         <p
@@ -556,7 +560,7 @@ export default function GetInvolved() {
       {/* Testimonial 2 */}
       <div className="relative rounded-xl bg-[#FAF7F2] p-8">
         <div className="absolute -top-4 left-6 flex h-10 w-10 items-center justify-center rounded-full bg-[#F7C96A]">
-          <HeartIcon className="h-5 w-5 text-(--black)" />
+          <Heart className="h-5 w-5 text-(--black)" />
         </div>
 
         <p
