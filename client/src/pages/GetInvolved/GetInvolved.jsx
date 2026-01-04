@@ -4,10 +4,10 @@ import {
   Wheat,
   Heart,
   Users,
-  Money,
-  handHeart,
+  DollarSign,
   Handshake,
-  share2,
+  HandHeart,
+  Share2,
 } from "lucide-react";
 
 import HonorSociety from "../../assets/getinvolved/honor-society-delivery.jpg";
@@ -212,7 +212,7 @@ export default function GetInvolved() {
       {/* Volunteer */}
       <div className="rounded-xl border-2 border-(--secondary) p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-(--secondary)">
-          <handHeart className="h-6 w-6 text-white" />
+          <HandHeart className="h-6 w-6 text-white" />
         </div>
 
         <h3
@@ -244,7 +244,10 @@ export default function GetInvolved() {
             font-semibold
             text-white
             transition
-            hover:opacity-90
+            hover:border
+            hover:border-(--secondary)
+            hover:bg-(--white)
+            hover:text-(--secondary)
           "
           style={{ fontFamily: "Quicksand" }}
         >
@@ -255,7 +258,7 @@ export default function GetInvolved() {
       {/* Donation */}
       <div className="rounded-xl border-2 border-[#F26B4F] p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#F26B4F]">
-          <Money className="h-6 w-6 text-white" />
+          <DollarSign className="h-6 w-6 text-white" />
         </div>
 
         <h3
@@ -287,7 +290,10 @@ export default function GetInvolved() {
             font-semibold
             text-white
             transition
-            hover:opacity-90
+            hover:border
+            hover:border-(--primary)
+            hover:bg-(--white)
+            hover:text-(--primary)
           "
           style={{ fontFamily: "Quicksand" }}
         >
@@ -298,7 +304,7 @@ export default function GetInvolved() {
       {/* Partner */}
       <div className="rounded-xl border-2 border-[#F7C96A] p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#F7C96A]">
-          <Handshake className="h-6 w-6 text-(--black)" />
+          <Handshake className="h-6 w-6 text-(--white)" />
         </div>
 
         <h3
@@ -328,9 +334,12 @@ export default function GetInvolved() {
             py-2
             text-sm
             font-semibold
-            text-(--black)
+            text-(--white)
             transition
-            hover:opacity-90
+            hover:border
+            hover:border-(--tertiary)
+            hover:bg-(--white)
+            hover:text-(--tertiary)
           "
           style={{ fontFamily: "Quicksand" }}
         >
@@ -341,7 +350,7 @@ export default function GetInvolved() {
       {/* Spread the Word */}
       <div className="rounded-xl border-2 border-(--secondary) p-8">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-(--secondary)">
-          <share2 className="h-6 w-6 text-white" />
+          <Share2 className="h-6 w-6 text-white" />
         </div>
 
         <h3
@@ -373,7 +382,10 @@ export default function GetInvolved() {
             font-semibold
             text-white
             transition
-            hover:opacity-90
+            hover:border
+            hover:border-(--secondary)
+            hover:bg-(--white)
+            hover:text-(--secondary)
           "
           style={{ fontFamily: "Quicksand" }}
         >
@@ -497,7 +509,10 @@ export default function GetInvolved() {
             font-semibold
             text-white
             transition
-            hover:opacity-90
+            hover:border
+            hover:border-(--primary)
+            hover:bg-(--white)
+            hover:text-(--primary)
           "
           style={{ fontFamily: "Quicksand" }}
         >
@@ -551,8 +566,14 @@ export default function GetInvolved() {
           </div>
 
           <div>
-            <p className="font-semibold text-(--black)">Maya, 16</p>
-            <p className="text-sm text-(--black)/70">Student Volunteer</p>
+            <p className="font-semibold text-(--black)"
+               style={{ fontFamily: "Poppins"}}>
+                Maya, 16
+            </p>
+            <p className="text-sm text-(--black)/70"
+               style={{ fontFamily: "Quicksand"}}>
+                Student Volunteer
+              </p>
           </div>
         </div>
       </div>
@@ -576,8 +597,12 @@ export default function GetInvolved() {
           </div>
 
           <div>
-            <p className="font-semibold text-(--black)">Carlos, 18</p>
-            <p className="text-sm text-(--black)/70">Volunteer Coordinator</p>
+            <p className="font-semibold text-(--black)"
+               style={{ fontFamily: "Poppins"}}>
+              Carlos, 18</p>
+            <p className="text-sm text-(--black)/70"
+               style={{ fontFamily: "Quicksand"}}>
+              Volunteer Coordinator</p>
           </div>
         </div>
       </div>
@@ -620,7 +645,10 @@ export default function GetInvolved() {
         font-semibold
         text-white
         transition
-        hover:opacity-90
+        hover:border
+        hover:border-(--primary)
+        hover:bg-(--white)
+        hover:text-(--primary)
       "
       style={{ fontFamily: "Quicksand" }}
     >
