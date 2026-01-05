@@ -6,6 +6,40 @@ import SantaRun from "../../assets/events/run-santa-run-5k.jpg";
 import ThanksgivingMeals from "../../assets/events/thanksgiving-meals-for-seniors.jpg";
 import GrocerySupport from "../../assets/events/holiday-grocery-support.webp";
 import CivJamaica from "../../assets/events/civic-education-jamaica.jpg";
+import EventList from "../../components/events/EventList.jsx";
+
+const calendarData = [
+  {
+    month: "November 2025",
+    year: 2025,
+    monthIndex: 10, // 0-based (Nov)
+    event: { day: 22, label: "Thanksgiving Meal Drive" },
+  },
+  {
+    month: "December 2025",
+    year: 2025,
+    monthIndex: 11,
+    event: { day: 14, label: "Holiday Care Box Day" },
+  },
+  {
+    month: "January 2026",
+    year: 2026,
+    monthIndex: 0,
+    event: { day: 18, label: "Health & Nutrition Fair" },
+  },
+];
+
+const daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
+
+function generateCalendar(year, monthIndex) {
+  const firstDay = new Date(year, monthIndex, 1).getDay();
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+  const blanks = Array(firstDay).fill(null);
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+  return [...blanks, ...days];
+}
 
 export default function Events() {
   return (
@@ -53,151 +87,25 @@ export default function Events() {
         
         </div>
       </section>
-    <section className="w-full bg-[#FAF7F2] py-24">
-  <div className="mx-auto max-w-[1199px] px-6 sm:px-8 text-center">
 
-    {/* Header */}
-    <h2
-      className="mb-3 text-3xl sm:text-4xl font-semibold text-(--black)"
-      style={{ fontFamily: "Poppins" }}
-    >
-      Upcoming Events
-    </h2>
+        <section className="w-full bg-[#FAF7F2] py-24">
+      <div className="mx-auto max-w-[1199px] px-6 sm:px-8 text-center">
 
-    <p
-      className="mb-16 text-(--black)/70"
-      style={{ fontFamily: "Quicksand" }}
-    >
-      Mark your calendar and join us at our next community event
-    </p>
+        <h2 className="mb-3 text-3xl sm:text-4xl font-semibold"
+            style={{ fontFamily: "Poppins" }}>
+          Upcoming Events
+        </h2>
 
-    {/* Events Grid */}
-    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-      {/* World Kindness Day */}
-      <div className="rounded-xl bg-white p-6 shadow-sm text-left border-t-4 border-[#E85C45]">
-        <h3
-          className="mb-3 text-lg font-semibold text-(--black)"
-          style={{ fontFamily: "Poppins" }}
-        >
-          World Kindness Day
-        </h3>
-
-        <ul
-          className="mb-4 space-y-2 text-sm text-(--black)/70"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          <li className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-(--secondary)" />
-            November 13, 2025
-          </li>
-          <li className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-(--secondary)" />
-            Laredo, TX
-          </li>
-        </ul>
-
-        <p
-          className="mb-6 text-sm text-(--black)/70"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Celebrating the power of small acts of kindness while encouraging the
-          community to support families through $10 grocery gift card donations.
+        <p className="mb-16 text-(--black)/70"
+           style={{ fontFamily: "Quicksand" }}>
+          Join us at our next community events
         </p>
 
-        <Link
-          to="/donate"
-          className="inline-flex w-full justify-center rounded-md bg-[#E85C45] px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Donate a Gift Card
-        </Link>
+        <EventList />
+
       </div>
+    </section>
 
-      {/* Gift Card Drive */}
-      <div className="rounded-xl bg-white p-6 shadow-sm text-left border-t-4 border-(--secondary)">
-        <h3
-          className="mb-3 text-lg font-semibold text-(--black)"
-          style={{ fontFamily: "Poppins" }}
-        >
-          Nourish Laredo Gift Card Drive
-        </h3>
-
-        <ul
-          className="mb-4 space-y-2 text-sm text-(--black)/70"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          <li className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-(--secondary)" />
-            Now – November 19, 2025
-          </li>
-          <li className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-(--secondary)" />
-            203 Lakeview Blvd & 906 Norman Dr
-          </li>
-        </ul>
-
-        <p
-          className="mb-6 text-sm text-(--black)/70"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Collecting Walmart and H-E-B gift cards to support underserved families.
-          Every $10 card provides food and earns 10 community service hours.
-        </p>
-
-        <Link
-          to="/get-involved"
-          className="inline-flex w-full justify-center rounded-md bg-(--secondary) px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Get Involved
-        </Link>
-      </div>
-
-      {/* Run Santa Run Support */}
-      <div className="rounded-xl bg-white p-6 shadow-sm text-left border-t-4 border-[#F7C96A]">
-        <h3
-          className="mb-3 text-lg font-semibold text-(--black)"
-          style={{ fontFamily: "Poppins" }}
-        >
-          Run Santa Run 5K Support
-        </h3>
-
-        <ul
-          className="mb-4 space-y-2 text-sm text-(--black)/70"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          <li className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-(--secondary)" />
-            December 21–23, 2025
-          </li>
-          <li className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-(--secondary)" />
-            Cigarroa Clinic, Laredo
-          </li>
-        </ul>
-
-        <p
-          className="mb-6 text-sm text-(--black)/70"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Volunteers assisted with packet pickup and registration for over
-          1,000 runners, supporting a holiday event that gives back to families
-          across Laredo.
-        </p>
-
-        <Link
-          to="/events"
-          className="inline-flex w-full justify-center rounded-md bg-[#F7C96A] px-4 py-2 text-sm font-semibold text-(--black) hover:opacity-90"
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Learn More
-        </Link>
-      </div>
-
-    </div>
-  </div>
-</section>
     <section className="w-full bg-white py-24">
       <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
         <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
@@ -319,11 +227,111 @@ export default function Events() {
         </div>
       </div>
     </section>
+    <section className="w-full bg-[#FAF7F2] py-24">
+      <div className="mx-auto max-w-[1199px] px-6 sm:px-8 text-center">
+
+        <h2
+          className="mb-3 text-3xl sm:text-4xl font-semibold text-(--black)"
+          style={{ fontFamily: "Poppins" }}
+        >
+          Event Calendar
+        </h2>
+
+        <p
+          className="mb-16 text-(--black)/70"
+          style={{ fontFamily: "Quicksand" }}
+        >
+          Plan ahead with our upcoming event schedule
+        </p>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+
+          {calendarData.map((month) => {
+            const calendarDays = generateCalendar(
+              month.year,
+              month.monthIndex
+            );
+
+            return (
+              <div
+                key={month.month}
+                className="rounded-xl bg-white shadow-sm overflow-hidden"
+              >
+                {/* Month Header */}
+                <div className="bg-(--secondary) py-3 text-white font-semibold"
+                     style={{ fontFamily: "Poppins" }}>
+                  {month.month}
+                </div>
+
+                {/* Calendar Grid */}
+                <div className="p-4">
+                  <div className="grid grid-cols-7 text-xs text-center mb-2 text-(--black)/60"
+                       style={{ fontFamily: "Quicksand" }}>
+                    {daysOfWeek.map((d) => (
+                      <div key={d}>{d}</div>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-7 gap-1 text-sm">
+                    {calendarDays.map((day, idx) => {
+                      const isEventDay = day === month.event.day;
+
+                      return (
+                        <div
+                          key={idx}
+                          className={`h-8 flex items-center justify-center rounded
+                            ${isEventDay
+                              ? "bg-(--secondary) text-white font-semibold"
+                              : "text-(--black)/70"}
+                          `}
+                          style={{ fontFamily: "Quicksand" }}
+                        >
+                          {day}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Event Label */}
+                  <div className="mt-4 flex items-center gap-2 text-sm text-(--black)/70"
+                       style={{ fontFamily: "Quicksand" }}>
+                    <Calendar className="h-4 w-4 text-(--secondary)" />
+                    {month.event.day} — {month.event.label}
+                  </div>
+
+                  {/* CTA */}
+                  <button
+                    className="
+                      mt-4
+                      w-full
+                      rounded-md
+                      border
+                      border-(--secondary)
+                      py-2
+                      text-sm
+                      font-semibold
+                      text-(--secondary)
+                      transition
+                      hover:bg-(--secondary)
+                      hover:text-white
+                    "
+                    style={{ fontFamily: "Quicksand" }}
+                  >
+                    Add to Calendar
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+
+        </div>
+      </div>
+    </section>
 
   {/* ===================== */}
 {/* Past Events Highlights */}
 {/* ===================== */}
-<section className="w-full bg-[#FAF7F2] py-24">
+<section className="w-full bg-(--white) py-24">
   <div className="mx-auto max-w-[1199px] px-6 sm:px-8 text-center">
 
     <h2
@@ -351,7 +359,7 @@ export default function Events() {
             alt="Run Santa Run 5K volunteer support"
             className="h-44 w-full object-cover"
           />
-          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium"
+          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             Dec 2025
           </span>
@@ -373,7 +381,7 @@ export default function Events() {
             Laredo’s largest holiday runs.
           </p>
 
-          <span className="inline-flex rounded-full bg-[#EAF6F4] px-3 py-1 text-xs text-(--secondary)"
+          <span className="inline-flex rounded-full bg-[#FAF7F2] px-3 py-1 text-xs text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             1,000+ runners supported
           </span>
@@ -388,7 +396,7 @@ export default function Events() {
             alt="Thanksgiving meal distribution for seniors"
             className="h-44 w-full object-cover"
           />
-          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium"
+          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             Nov 2025
           </span>
@@ -410,7 +418,7 @@ export default function Events() {
             seniors.
           </p>
 
-          <span className="inline-flex rounded-full bg-[#EAF6F4] px-3 py-1 text-xs text-(--secondary)"
+          <span className="inline-flex rounded-full bg-[#FAF7F2] px-3 py-1 text-xs text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             150+ meals distributed
           </span>
@@ -426,7 +434,7 @@ export default function Events() {
             className="h-44 w-full object-cover"
             style={{ objectPosition: "50% 10%" }}
           />
-          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium"
+          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             Nov 2025
           </span>
@@ -448,7 +456,7 @@ export default function Events() {
             and community programs.
           </p>
 
-          <span className="inline-flex rounded-full bg-[#EAF6F4] px-3 py-1 text-xs text-(--secondary)"
+          <span className="inline-flex rounded-full bg-[#FAF7F2] px-3 py-1 text-xs text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             15 families supported
           </span>
@@ -464,7 +472,7 @@ export default function Events() {
             className="h-44 w-full object-cover"
             style={{ objectPosition: "50% 5%" }}
           />
-          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium"
+          <span className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-medium text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}}>
             Nov 2025
           </span>
@@ -486,7 +494,7 @@ export default function Events() {
             and education.
           </p>
 
-          <span className="inline-flex rounded-full bg-[#EAF6F4] px-3 py-1 text-xs text-(--secondary)"
+          <span className="inline-flex rounded-full bg-[#FAF7F2] px-3 py-1 text-xs text-(--secondary)"
                 style={{ fontFamily: "Quicksand"}} >
             Student-led community event
           </span>

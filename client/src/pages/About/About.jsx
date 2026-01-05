@@ -105,7 +105,7 @@ export default function About() {
           {/* Vision Card */}
           <div className="rounded-lg border border-(--tertiary) bg-white p-8">
             <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-(--tertiary)">
-              <IncreasingArrow size={24} stroke="var(--black)" />
+              <IncreasingArrow size={24} stroke="var(--white)" />
             </div>
 
             <h3 className="mb-4 text-xl font-semibold text-(--black)"
@@ -179,7 +179,7 @@ export default function About() {
 
               <ul className="space-y-4">
                 <li className="flex items-center gap-4">
-                  <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--black)"
+                  <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--white)"
                         style={{ fontFamily: "Caveat Brush"}}>
                     2023
                   </span>
@@ -190,7 +190,7 @@ export default function About() {
                 </li>
 
                 <li className="flex items-center gap-4">
-                  <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--black)"
+                  <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--white)"
                         style={{ fontFamily: "Caveat Brush"}}>
                     2024
                   </span>
@@ -201,7 +201,7 @@ export default function About() {
                 </li>
 
                 <li className="flex items-center gap-4">
-                  <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--black)"
+                  <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--white)"
                         style={{ fontFamily: "Caveat Brush"}}>
                     2025
                   </span>
@@ -513,7 +513,10 @@ export default function About() {
                 font-semibold
                 text-(--white)
                 transition
-                hover:opacity-90
+                hover:border
+                hover:border-(--secondary)
+                hover:bg-(--white)
+                hover:text-(--secondary)
               "
               style={{ fontFamily: "Quicksand" }}
             >
@@ -567,7 +570,10 @@ export default function About() {
                     font-semibold
                     text-white
                     transition
-                    hover:opacity-90
+                    hover:border
+                    hover:border-(--primary)
+                    hover:bg-(--white)
+                    hover:text-(--primary)
                   "
                   style={{ fontFamily: "Quicksand" }}
                 >
@@ -583,9 +589,11 @@ export default function About() {
                     py-3
                     text-sm
                     font-semibold
-                    text-(--black)
+                    text-(--secondary)
                     transition
-                    hover:bg-white/90
+                    hover:bg-(--secondary)
+                    hover:text-(--white)
+                    border
                   "
                   style={{ fontFamily: "Quicksand" }}
                 >
