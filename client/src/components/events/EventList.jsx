@@ -1,40 +1,18 @@
-import { useEffect, useState } from "react";
 import { Calendar, MapPin } from "lucide-react";
 
 const colorVariants = [
-  {
-    border: "border-[#E85C45]",      // coral
-    icon: "text-[#E85C45]",
-  },
-  {
-    border: "border-(--secondary)",  // teal
-    icon: "text-(--secondary)",
-  },
-  {
-    border: "border-[#F7C96A]",      // yellow
-    icon: "text-[#F7C96A]",
-  },
+  { border: "border-[#E85C45]", icon: "text-[#E85C45]" },
+  { border: "border-(--secondary)", icon: "text-(--secondary)" },
+  { border: "border-[#F7C96A]", icon: "text-[#F7C96A]" },
 ];
 
-export default function EventList() {
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/events/")
-      .then((res) => res.json())
-      .then((data) => {
-        setEvents(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching events:", err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <p className="text-center">Loading events…</p>;
+export default function EventList({ events }) {
+  if (!events || events.length === 0) {
+    return (
+      <p className="text-center text-(--black)/60">
+        No upcoming events scheduled yet.
+      </p>
+    );
   }
 
   return (
