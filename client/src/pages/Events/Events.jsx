@@ -90,7 +90,7 @@ export default function Events() {
             Join us at our next community events
           </p>
 
-          {!loading && <EventList events={upcomingEvents} />}
+          <EventList events={upcomingEvents} loading={loading} />
         </div>
       </section>
 
@@ -148,12 +148,12 @@ export default function Events() {
       {/* ===================== */}
       {/* Event Calendar */}
       {/* ===================== */}
-      {!loading && <EventCalendar events={upcomingEvents} />}
+      <EventCalendar events={upcomingEvents} />
 
       {/* ===================== */}
       {/* Past Events Highlights */}
       {/* ===================== */}
-      {!loading && <PastEvents events={highlightedPastEvents} />}
+      <PastEvents events={highlightedPastEvents} />
 
       {/* ===================== */}
       {/* CTA */}

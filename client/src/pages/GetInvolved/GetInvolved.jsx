@@ -14,7 +14,7 @@ import HonorSociety from "../../assets/getinvolved/honor-society-delivery.jpg";
 import BackseatBags from "../../assets/getinvolved/bags-in-the-backseat.png";
 import TruckLoading from "../../assets/getinvolved/loading-the-truck.jpg";
 import HelpingHands from "../../assets/getinvolved/helping-hands.jpg";
-
+import VolunteerForm from "../../components/getinvolved/VolunteerForm.jsx";
 
 export default function GetInvolved() {
   return (<div>
@@ -396,133 +396,33 @@ export default function GetInvolved() {
     </div>
   </div>
 </section>
-{/* Volunteer Sign-Up */}
-<section className="w-full bg-[#FAF7F2] py-24">
-  <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
+    {/* Volunteer Sign-Up */}
+    <section className="w-full bg-[#FAF7F2] py-24">
+      <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
 
-    {/* Header */}
-    <div className="mb-16 text-center">
-      <h2
-        className="mb-4 text-3xl sm:text-4xl font-semibold text-(--black)"
-        style={{ fontFamily: "Poppins" }}
-      >
-        Volunteer Sign-Up
-      </h2>
-
-      <p
-        className="text-(--black)/70"
-        style={{ fontFamily: "Quicksand" }}
-      >
-        Fill out the form below and we’ll be in touch with next steps
-      </p>
-    </div>
-
-    {/* Form Card */}
-    <div className="mx-auto max-w-xl rounded-xl bg-white p-8 shadow-sm">
-      <form className="space-y-6">
-
-        {/* Name + Email */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div>
-            <label
-              className="mb-2 block text-sm font-medium text-(--black)"
-              style={{ fontFamily: "Quicksand" }}
-            >
-              Full Name *
-            </label>
-            <input
-              type="text"
-              placeholder=""
-              className="w-full rounded-md bg-[#FAF7F2] px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-(--secondary)"
-            />
-          </div>
-
-          <div>
-            <label
-              className="mb-2 block text-sm font-medium text-(--black)"
-              style={{ fontFamily: "Quicksand" }}
-            >
-              Email Address *
-            </label>
-            <input
-              type="email"
-              placeholder=""
-              className="w-full rounded-md bg-[#FAF7F2] px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-(--secondary)"
-            />
-          </div>
-        </div>
-
-        {/* Phone */}
-        <div>
-          <label
-            className="mb-2 block text-sm font-medium text-(--black)"
+        {/* Section Header */}
+        <div className="mb-16 text-center">
+          <h2
+            className="mb-4 text-3xl sm:text-4xl font-semibold text-(--black)"
             style={{ fontFamily: "Quicksand" }}
           >
-            Phone Number *
-          </label>
-          <input
-            type="tel"
-            placeholder=""
-            className="w-full rounded-md bg-[#FAF7F2] px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-(--secondary)"
-          />
-        </div>
+            Volunteer Sign-Up
+          </h2>
 
-        {/* Availability */}
-        <div>
-          <label
-            className="mb-2 block text-sm font-medium text-(--black)"
+          <p
+            className="text-(--black)/70"
             style={{ fontFamily: "Quicksand" }}
           >
-            Availability
-          </label>
-          <input
-            type="text"
-            placeholder="e.g., Weekends, Tuesday evenings"
-            className="w-full rounded-md bg-[#FAF7F2] px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-(--secondary)"
-          />
+            Fill out the form below and we’ll be in touch with next steps
+          </p>
         </div>
 
-        {/* Motivation */}
-        <div>
-          <label
-            className="mb-2 block text-sm font-medium text-(--black)"
-            style={{ fontFamily: "Quicksand" }}
-          >
-            Tell us why you want to volunteer
-          </label>
-          <textarea
-            rows={4}
-            placeholder="Share what motivates you to help..."
-            className="w-full rounded-md bg-[#FAF7F2] px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-(--secondary)"
-          />
-        </div>
+        {/* Form */}
+        <VolunteerForm />
 
-        {/* Submit */}
-        <button
-          type="submit"
-          className="
-            w-full
-            rounded-md
-            bg-[#F26B4F]
-            py-3
-            text-sm
-            font-semibold
-            text-white
-            transition
-            hover:border
-            hover:border-(--primary)
-            hover:bg-(--white)
-            hover:text-(--primary)
-          "
-          style={{ fontFamily: "Quicksand" }}
-        >
-          Submit Application
-        </button>
+      </div>
+    </section>
 
-      </form>
-    </div>
-  </div>
-</section>
 {/* Hear from Our Volunteers */}
 <section className="w-full bg-white px-8 py-24">
   <div className="mx-auto max-w-[1199px]">

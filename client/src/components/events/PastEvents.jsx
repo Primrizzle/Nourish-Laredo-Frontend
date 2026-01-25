@@ -30,7 +30,7 @@ export default function PastEvents({ events = [] }) {
               {event.image && (
                 <div className="relative">
                   <img
-                    src={event.image}
+                    src={`/assets/events/${event.image}`}
                     alt={event.title}
                     className="h-44 w-full object-cover"
                   />
