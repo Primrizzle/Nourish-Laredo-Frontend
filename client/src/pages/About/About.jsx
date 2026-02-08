@@ -503,7 +503,7 @@ export default function About() {
           {/* CTA */}
           <div className="mt-16">
             <Link
-              to="/programs"
+              to="/programs#what-we-do"
               className="
                 rounded-lg
                 bg-(--secondary)
@@ -560,7 +560,7 @@ export default function About() {
             {/* Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
-                  to="/get-involved"
+                  to="/getinvolved#volunteer-form"
                   className="
                     rounded-lg
                     bg-[#F26B4F]
@@ -581,7 +581,7 @@ export default function About() {
                 </Link>
 
                 <Link
-                  to="/donate"
+                  to="/donate#donate-form"
                   className="
                     rounded-lg
                     bg-white

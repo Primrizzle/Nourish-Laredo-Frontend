@@ -553,7 +553,7 @@ export default function Contact() {
     {/* CTA Buttons */}
       <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
         <Link
-          to="/getinvolved"
+          to="/getinvolved#volunteer-form"
           className="
             inline-flex
             items-center
@@ -574,7 +574,7 @@ export default function Contact() {
         </Link>
 
         <Link
-          to="/events"
+          to="/events#upcoming-events"
           className="
             inline-flex
             items-center

@@ -10,6 +10,8 @@ import MoneyIcon from "../../components/icons/MoneyIcon";
 import BusinessIcon from "../../components/icons/BusinessIcon";
 import HeadphonesIcon from "../../components/icons/HeadphonesIcon";
 
+import DonateNow from "../../components/donation/DonateForm";
+import { Link } from "react-router-dom"; 
 
 export default function Home() {
   return (
@@ -44,21 +46,22 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/donate"
-                className="h-10 px-6 rounded-md bg-(--primary) text-white font-semibold flex items-center justify-center hover:bg-white hover:text-(--primary)" 
-                style={{ fontFamily: 'Quicksand'}}
+              <Link
+                to="/donate#donate-form"
+                className="h-10 px-6 rounded-md bg-(--primary) text-white font-semibold flex items-center justify-center hover:bg-white hover:text-(--primary)"
+                style={{ fontFamily: "Quicksand" }}
               >
                 Donate Now
-              </a>
+              </Link>
 
-              <a
-                href="/get-involved"
+              <Link
+                to="/getinvolved#volunteer-form"
                 className="h-10 px-6 rounded-md bg-white text-(--primary) font-semibold flex items-center justify-center hover:bg-(--primary) hover:text-white"
-                style={{ fontFamily: 'Quicksand'}}
+                style={{ fontFamily: "Quicksand" }}
               >
                 Volunteer
-              </a>
+              </Link>
+
             </div>
           </div>
         </div>
@@ -335,8 +338,8 @@ export default function Home() {
               hours a week or just want to help at events, we’d love to have you.
             </p>
 
-            <a
-              href="/get-involved"
+            <Link
+              to="/getinvolved#volunteer-form"
               className="
                 mt-8
                 inline-flex
@@ -356,7 +359,7 @@ export default function Home() {
               style={{ fontFamily: "Quicksand" }}
             >
               Become a Volunteer
-            </a>
+            </Link>
           </div>
 
           {/* Donation Card */}
@@ -383,7 +386,7 @@ export default function Home() {
             </p>
 
             <a
-              href="/donate"
+              href="/donate#donate-form"
               className="
                 mt-8
                 inline-flex
@@ -491,7 +494,7 @@ export default function Home() {
 
               <div>
                 <p className="font-semibold text-(--secondary)" >
-                  Maria R.
+                  Maria O.
                 </p>
                 <p className="text-sm text-(--black) opacity-70">Laredo Resident</p>
               </div>

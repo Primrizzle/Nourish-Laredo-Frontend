@@ -24,14 +24,11 @@ export default function VolunteerForm() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "http://127.0.0.1:8000/api/volunteer-signup/",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch("http://127.0.0.1:8000/api/volunteer-signup/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       if (!res.ok) throw new Error("Submission failed");
 
@@ -60,7 +57,6 @@ export default function VolunteerForm() {
       )}
 
       <form className="space-y-6" onSubmit={handleSubmit}>
-
         {/* Name + Email */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
@@ -146,7 +142,6 @@ export default function VolunteerForm() {
         >
           {loading ? "Submitting..." : "Submit Application"}
         </button>
-
       </form>
     </div>
   );

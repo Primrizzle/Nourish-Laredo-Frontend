@@ -74,7 +74,7 @@ export default function Events() {
       {/* ===================== */}
       {/* Upcoming Events */}
       {/* ===================== */}
-      <section className="w-full bg-[#FAF7F2] py-24">
+      <section id="upcoming-events" className="w-full bg-[#FAF7F2] py-24">
         <div className="mx-auto max-w-[1199px] px-6 sm:px-8 text-center">
           <h2
             className="mb-3 text-3xl sm:text-4xl font-semibold"
@@ -176,7 +176,7 @@ export default function Events() {
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
-              to="/get-involved"
+              to="/getinvolved#volunteer-form"
               className="rounded-md bg-[#F26B4F] px-6 py-3 text-sm font-semibold text-white"
               style={{ fontFamily: "Quicksand" }}
             >
@@ -184,7 +184,7 @@ export default function Events() {
             </Link>
 
             <Link
-              to="/donate"
+              to="/donate#donate-form"
               className="rounded-md bg-(--secondary) px-6 py-3 text-sm font-semibold text-white"
               style={{ fontFamily: "Quicksand" }}
             >

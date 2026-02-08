@@ -5,10 +5,6 @@ import LoriBagging from "../../assets/programs/lori-bagging.jpg";
 import VolunteerCollage from "../../assets/programs/volunteer-collage.jpg";
 import HungerFoodDrive from "../../assets/programs/hunger-action-month-food-drive.jpg";
 import FootballWorkers from "../../assets/programs/football-players-working.jpg";
-import CommunityBuilding from "../../assets/programs/support-community-building.jpg";
-import UtensilsIcon from "../../components/icons/UtensilsIcon.jsx";
-import PresentIcon from "../../components/icons/PresentIcon.jsx";
-import CalendarIcon from "../../components/icons/CalendarIcon.jsx";
 import HeartIcon from "../../components/icons/HeartIcon.jsx";
 import VolunteerIcon from "../../components/icons/VolunteerIcon.jsx";
 import HouseIcon from "../../components/icons/HouseIcon.jsx";
@@ -63,7 +59,7 @@ export default function Programs() {
       </div>
     </section>
     {/* What We Do */}
-    <section className="w-full bg-[#FAF7F2] px-8 py-24">
+    <section id="what-we-do" className="w-full bg-[#FAF7F2] px-8 py-24">
       <div className="mx-auto max-w-[1199px]">
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -109,14 +105,14 @@ export default function Programs() {
               Weekly meal drives delivering nutritious food directly to local
               families in need throughout Laredo.
             </p>
-
+            {/*
             <a
               href="/get-involved"
               className="inline-flex items-center text-sm font-semibold text-(--secondary) hover:underline"
               style={{ fontFamily: "Quicksand" }}
             >
               Learn More
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -144,14 +140,14 @@ export default function Programs() {
               Engaging local youth and community members to build leadership
               skills while serving their neighbors.
               </p>
-
+              {/*
               <a
                 href="/get-involved"
                 className="inline-flex items-center text-sm font-semibold text-(--secondary) hover:underline"
                 style={{ fontFamily: "Quicksand" }}
               >
                 Learn More
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -179,13 +175,13 @@ export default function Programs() {
                 Holiday and back-to-school campaigns providing special support
                 during critical times of the year.
               </p>
-              <a
+              {/*<a
                 href="/programs"
                 className="inline-flex items-center text-sm font-semibold text-(--secondary) hover:underline"
                 style={{ fontFamily: "Quicksand" }}
               >
                 Learn More
-              </a>
+              </a>*/}
             </div>
           </div>
 
@@ -212,13 +208,13 @@ export default function Programs() {
                 community bonds and provide resources.
               </p>
 
-              <a
+              {/*<a
                 href="/programs"
                 className="inline-flex items-center text-sm font-semibold text-(--secondary) hover:underline"
                 style={{ fontFamily: "Quicksand" }}
               >
               Learn More
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -439,7 +435,7 @@ export default function Programs() {
         {/* Buttons */}
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            href="/get-involved"
+            href="/getinvolved#volunteer-form"
             className="
               rounded-lg
               bg-[#F26B4F]
@@ -459,7 +455,7 @@ export default function Programs() {
           </a>
 
           <a
-            href="/donate"
+            href="/donate#donate-form"
             className="
               rounded-lg
               bg-white

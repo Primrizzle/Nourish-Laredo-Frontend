@@ -10,9 +10,12 @@ import Partners from "./pages/Partners/Partners";
 import Donate from "./pages/Donate/Donate";
 import Contact from "./pages/Contact/Contact";
 
+import ScrollToHash from "./components/utilities/ScrollToHash";
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToHash />
       <Routes>
 
         {/* Layout route MUST have a path */}

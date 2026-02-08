@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Heart } from "lucide-react";
 
+import { useEffect, useRef } from "react";
+
+
+
 export default function DonationForm() {
   const [frequency, setFrequency] = useState("one-time");
   const [amount, setAmount] = useState(50);
@@ -26,9 +30,19 @@ export default function DonationForm() {
     console.log("Donation submitted:", donationPayload);
   };
 
+  const firstInputRef = useRef(null);
+
+  useEffect(() => {
+    if (window.location.hash === "#donate-form") {
+      firstInputRef.current?.focus();
+    }
+  }, []);
+
   return (
     <section className="w-full bg-(--white) py-24 px-6">
-      <div className="mx-auto max-w-lg rounded-xl border border-(--secondary) bg-white p-8 shadow-sm">
+      <div
+        id="donate-form" 
+        className="mx-auto max-w-lg rounded-xl border border-(--secondary) bg-white p-8 shadow-sm">
 
         {/* Header */}
         <div className="mb-8 text-center">
@@ -105,10 +119,11 @@ export default function DonationForm() {
         {/* Custom Amount */}
         <div className="mb-6">
           <input
+            ref={firstInputRef}
             type="number"
             placeholder="$ Enter custom amount"
             value={customAmount}
-            onChange={(e) => setCustomAmount(e.target.value)}
+            onChange={(e) => setCustomAmount(e.target.value)}   
             className="w-full rounded-md border border-gray-200 bg-[#FAF7F2] px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-(--secondary)"
           />
         </div>

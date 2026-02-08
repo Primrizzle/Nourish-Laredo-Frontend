@@ -1,10 +1,11 @@
-import {Link} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import {useEffect} from "react";
 
 import {
   Wheat,
   Heart,
   Users,
-  DollarSign,
+  DollarSign, 
   Handshake,
   HandHeart,
   Share2,
@@ -17,6 +18,17 @@ import HelpingHands from "../../assets/getinvolved/helping-hands.jpg";
 import VolunteerForm from "../../components/getinvolved/VolunteerForm.jsx";
 
 export default function GetInvolved() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const el = document.getElementById(hash.replace("#", ""));
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hash]);
+
   return (<div>
     {/* Hero Section */}
       <section
@@ -231,7 +243,7 @@ export default function GetInvolved() {
         </p>
 
         <Link
-          to="/get-involved"
+          to="/getinvolved#volunteer-form"
           className="
             inline-flex
             items-center
@@ -277,7 +289,7 @@ export default function GetInvolved() {
         </p>
 
         <Link
-          to="/donate"
+          to="/donate#donate-form"
           className="
             inline-flex
             items-center
@@ -369,7 +381,7 @@ export default function GetInvolved() {
         </p>
 
         <Link
-          to="/get-involved"
+          to="/getinvolved#volunteer-form"
           className="
             inline-flex
             items-center
@@ -397,8 +409,10 @@ export default function GetInvolved() {
   </div>
 </section>
     {/* Volunteer Sign-Up */}
-    <section className="w-full bg-[#FAF7F2] py-24">
-      <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
+    <section 
+    id="volunteer-form"
+    className="w-full bg-[#FAF7F2] py-24">
+    <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
 
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -532,7 +546,7 @@ export default function GetInvolved() {
     </p>
 
     <Link
-      to="/donate"
+      to="/donate#donate-form"
       className="
         inline-flex
         items-center
