@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "./stripe";
+
 import MainLayout from "./layouts/MainLayout";
 
 import Home from "./pages/Home/Home";
@@ -29,9 +32,15 @@ export default function App() {
           <Route path="events" element={<Events />} />
           <Route path="getinvolved" element={<GetInvolved />} />
           <Route path="partners" element={<Partners />} />
-          <Route path="donate" element={<Donate />} />
+          <Route
+            path="donate"
+            element={
+              <Elements stripe={stripePromise}>
+                <Donate />
+              </Elements>
+            } />
           <Route path="contact" element={<Contact />} />
-
+ 
         </Route>
 
       </Routes>

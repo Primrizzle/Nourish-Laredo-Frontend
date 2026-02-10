@@ -530,7 +530,7 @@ export default function Donate() {
       </Link>
 
       <Link
-        to="/get-involved"
+        to="/getinvolved#volunteer-form"
         className="
           inline-flex
           items-center

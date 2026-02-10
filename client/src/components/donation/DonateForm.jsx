@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useRef  } from "react";
 import { Heart } from "lucide-react";
-
-import { useEffect, useRef } from "react";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 
 
@@ -15,20 +14,41 @@ export default function DonationForm() {
     message: "",
   });
 
+  const stripe = useStripe();
+  const elements = useElements();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+
   const presetAmounts = [10, 25, 50, 100];
 
-  const handleSubmit = (e) => {
+        const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const donationPayload = {
-      frequency,
-      amount: customAmount ? Number(customAmount) : amount,
-      ...formData,
+    const payload = {
+      amount: customAmount ? Number(customAmount) * 100 : amount * 100,
+      name: formData.name || null,
+      email: formData.email || null,
+      message: formData.message || null,
+      anonymous: !formData.name && !formData.email,
     };
 
-    // TODO: connect to backend donation endpoint
-    console.log("Donation submitted:", donationPayload);
+    const res = await fetch(
+      `${import.meta.env.VITE_API_BASE_URL}/api/donations/checkout/`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    const data = await res.json();
+    window.location.href = data.url;
   };
+
+
+
+
 
   const firstInputRef = useRef(null);
 
@@ -163,7 +183,7 @@ export default function DonationForm() {
           rows={3}
           className="mb-6 w-full rounded-md border border-gray-200 bg-[#FAF7F2] px-4 py-2 text-sm"
         />
-
+        
         {/* Submit */}
         <button
           onClick={handleSubmit}
@@ -172,7 +192,7 @@ export default function DonationForm() {
           <Heart className="h-4 w-4" />
           Donate Securely
         </button>
-
+        
         {/* Footer Note */}
         <p
           className="mt-4 text-center text-xs text-(--black)/60"
