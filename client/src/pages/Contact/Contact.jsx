@@ -187,7 +187,7 @@ export default function Contact() {
                   <li className="flex gap-3">
                     <MapPin className="h-4 w-4 text-(--secondary) mt-0.5" />
                     <span>
-                      1234 San Agustin Ave<br />
+                      702 Corpus Christi St.<br />
                       Laredo, TX 78040
                     </span>
                   </li>
@@ -197,10 +197,7 @@ export default function Contact() {
                     hello@nourishlaredo.org
                   </li>
 
-                  <li className="flex items-center gap-3">
-                    <Phone className="h-4 w-4 text-(--secondary)" />
-                    (956) 555-2048
-                  </li>
+                  
                 </ul>
               </div>
 
@@ -215,13 +212,6 @@ export default function Contact() {
                     <FaFacebookF className="h-5 w-5 text-(--white)" />
                   </div>
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E85C45]">
-                    <FaInstagram className="h-5 w-5 text-(--white)" />
-                  </div>
-
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4C76C]">
-                    <FaLinkedinIn className="h-5 w-5 text-(--white)" />
-                  </div>
                 </div>
               </div>
             </div>
@@ -287,7 +277,7 @@ export default function Contact() {
             "
               style={{ fontFamily: "Quicksand" }}>
               <MapPin className="h-4 w-4 text-(--secondary)"/>
-              1234 San Agustin Ave, Laredo, TX
+              702 Corpus Christi St., Laredo, TX 78040
             </div>
           </div>
         </div>
@@ -310,7 +300,10 @@ export default function Contact() {
               font-semibold
               text-white
               transition
-              hover:opacity-90
+              hover:bg-(--white)
+              hover:border
+              hover:border-(--secondary)
+              hover:text-(--secondary)
             "
             style={{ fontFamily: "Quicksand" }}
           >
@@ -566,7 +559,10 @@ export default function Contact() {
             font-semibold
             text-white
             transition
-            hover:opacity-90
+            hover:bg-(--white)
+            hover:border
+            hover:border-(--secondary)
+            hover:text-(--secondary)
           "
           style={{ fontFamily: "Quicksand" }}
         >
@@ -587,7 +583,11 @@ export default function Contact() {
             font-semibold
             text-white
             transition
-            hover:opacity-90
+            hover:bg-(--white)
+            hover:border
+            hover:border-(--primary)
+            hover:text-(--primary)
+            
           "
           style={{ fontFamily: "Quicksand" }}
         >

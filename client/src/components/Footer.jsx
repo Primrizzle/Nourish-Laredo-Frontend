@@ -24,15 +24,15 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="font-semibold text-(--secondary) mb-4">
+          <h4 className="font-bold text-(--secondary) mb-4">
             Quick Links
           </h4>
           <ul className="flex flex-col gap-2 text-sm text-gray-600">
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/programs">Our Programs</Link></li>
-            <li><Link to="/events">Upcoming Events</Link></li>
-            <li><Link to="/get-involved">Volunteer</Link></li>
-            <li><Link to="/partners">Our Partners</Link></li>
+            <li className="hover:text-(--primary)"><Link to="/about">About Us</Link></li>
+            <li className="hover:text-(--primary)"><Link to="/programs">Our Programs</Link></li>
+            <li className="hover:text-(--primary)"><Link to="/events">Upcoming Events</Link></li>
+            <li className="hover:text-(--primary)"><Link to="/getinvolved">Volunteer</Link></li>
+            <li className="hover:text-(--primary)"><Link to="/partners">Our Partners</Link></li>
           </ul>
         </div>
 
@@ -46,19 +46,14 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-(--secondary) mt-0.5" />
               <span>
-                123 Community Ave<br />
+                702 Corpus Christi St<br />
                 Laredo, TX 78040
               </span>
             </li>
 
             <li className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-(--secondary)" />
-              (956) 555-0123
-            </li>
-
-            <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-(--secondary)" />
-              info@nourishlaredo.org
+              hello@nourishlaredo.org
             </li>
           </ul>
         </div>
@@ -81,7 +76,19 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="px-4 py-2 rounded-md bg-(--secondary) text-white text-sm font-semibold hover:bg-opacity-90"
+              className="
+                px-4 
+                py-2 
+                rounded-md 
+                bg-(--secondary) 
+                text-white 
+                text-sm 
+                font-semibold 
+                hover:bg-opacity-90 
+                hover:border 
+                hover:border-(--secondary) 
+                hover:bg-(--white)
+                hover:text-(--secondary)"
             >
               Subscribe
             </button>
@@ -92,7 +99,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-(--secondary)">
         <div className="w-full max-w-[1199px] mx-auto px-6 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <span>© 2025 Nourish Laredo. All rights reserved.</span>
+          <span>© 2026 Nourish Laredo. All rights reserved. Website donated by Ashley Primrose.</span>
 
           <div className="flex gap-4 text-(--secondary)">
             <a href="#" aria-label="Facebook">f</a>
