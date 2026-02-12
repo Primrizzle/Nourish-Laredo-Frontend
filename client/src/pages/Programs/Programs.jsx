@@ -354,14 +354,14 @@ export default function Programs() {
                     "
                   style={{ fontFamily: "Poppins" }}
                   >
-                  FEATURED STORY
+                  COMMUNITY IMPACT
                 </span>
 
                 <h2
                   className="mt-4 mb-6 text-3xl font-semibold text-(--black)"
                   style={{ fontFamily: "Poppins" }}
                 >
-                  Making an Impact in Laredo
+                  Empowering the Next Generation of Service
                 </h2>
 
                 <div
@@ -369,51 +369,27 @@ export default function Programs() {
                   style={{ fontFamily: "Quicksand" }}
                 >
                   <p>
-                    Last month, our Meal Distribution Program reached a major milestone—
-                    delivering over 10,000th meal to families across Laredo. What started
-                    as a small group of passionate youth volunteers has grown into a
-                    movement that touches hundreds of lives every week.
+                    At Nourish Laredo, we believe that the most effective way 
+                    to address food insecurity is by empowering those who will 
+                    lead our city tomorrow. Our programs are designed to be 
+                    entirely youth-led, providing local students with the 
+                    platform to organize, plan, and execute community relief efforts.
                   </p>
 
                   <p>
-                    Through partnerships with local businesses and the dedication of our
-                    volunteer teams, we’ve been able to provide not just food, but hope and
-                    community connection to those who need it most. This is just the
-                    beginning of what we can achieve together.
+                    We aren't just distributing meals — we are fostering a lifelong 
+                    commitment to civic duty and compassion in the hearts of Laredo’s youth.
                   </p>
                 </div>
-
-                {/* Button */}
-                  <a
-                    href="/stories"
-                    className="
-                      mt-8
-                      inline-flex
-                      items-center
-                      justify-center
-                      rounded-lg
-                      bg-(--secondary)
-                      px-6
-                      py-3
-                      text-sm
-                      font-semibold
-                      text-white
-                      transition
-                      hover:bg-(--tertiary)
-                      hover:border
-                    "
-                    style={{ fontFamily: "Quicksand" }}
-                  >
-                    Read Full Story
-                  </a>
+               
                 </div>
               </div>
             </section>
     {/* Call to Action */}
     <section className="relative w-full overflow-hidden bg-(--secondary)">
       {/* Decorative circles */}
-      <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10" />
-      <div className="absolute left-[-60px] bottom-[-60px] h-48 w-48 rounded-full bg-white/10" />
+      <div className="absolute -right-5 -top-10 h-64 w-64 rounded-full bg-(--white)/10 blur" />
+      <div className="absolute left-15 bottom-10 h-48 w-48 rounded-full bg-(--white)/10 blur" />
 
       <div className="relative mx-auto max-w-[1199px] px-8 py-24 text-center text-white">
         <h2

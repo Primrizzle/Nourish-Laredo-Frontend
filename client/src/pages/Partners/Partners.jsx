@@ -15,8 +15,6 @@ import {
 import { Link } from "react-router-dom";
 
 import CakePartner from "../../assets/partners/local-partners-lo-mat-ad.jpg";
-import StoneStorefront from "../../assets/partners/stone-storefront.jpg";
-import SunsetGroup from "../../assets/partners/sunset-group-pic.jpg";
 import DynamicPartnersGrid from "../../components/partners/DynamicPartnersGrid.jsx";
 import BruniChurch from "../../assets/partners/bruni-umc-ii.jpg"
 import TellezLaw from "../../assets/partners/joey-tellez-law.jpg"
@@ -24,11 +22,11 @@ import PhilanthropyBabe from "../../assets/partners/philanthropy-again.jpg"
 import GlobalPC from "../../assets/partners/global-pcnet-I.avif"
 import PartnerInquiry from "../../components/partners/PartnerInquiry";
 
+
 export default function Partners() {
   // 1. STATE FOR MODAL VISIBILITY
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Optional: Prevent scrolling when modal is open
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
@@ -436,8 +434,12 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="w-full bg-[#E85C45] py-24">
-        <div className="mx-auto max-w-[900px] px-6 text-center text-white">
+      <section className="relative w-full bg-[#E85C45] py-24 overflow-hidden">
+        <div className="absolute -top-12 right-0 h-64 w-64 rounded-full bg-(--white)/20 blur md:h-80 md:w-80" />
+  
+        {/* Right Top Dot (Mint/Blue) */}
+        <div className="absolute -bottom-16 -left h-48 w-48 rounded-full bg-(--white)/30 blur md:h-64 md:w-64" />
+        <div className="relative mx-auto max-w-[900px] px-6 text-center text-white"> 
           <div className="mb-6 flex justify-center">
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/15">
               <Users className="h-7 w-7 text-white" />
@@ -500,6 +502,7 @@ export default function Partners() {
             </Link>
           </div>
         </div>
+        
       </section>
     </div>
   );

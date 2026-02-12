@@ -55,7 +55,7 @@ export default function Contact() {
             className="text-lg md:text-xl text-white/90"
             style={{ fontFamily: "Quicksand" }}
           >
-            We’d love to hear from you — together, we can nourish our community.
+            We’d love to hear from you! Together, we can nourish our community.
           </p>
         </div>
       </section>

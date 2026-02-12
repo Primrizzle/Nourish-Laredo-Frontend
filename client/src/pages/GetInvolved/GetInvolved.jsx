@@ -579,8 +579,8 @@ export default function GetInvolved() {
       {/* Ready to Make a Difference */}
       <section className="relative w-full bg-[#FFF1E6] px-8 py-24 overflow-hidden">
         {/* Decorative Circles */}
-        <div className="absolute left-10 top-10 h-24 w-24 rounded-full bg-[#E6F2EF]" />
-        <div className="absolute right-16 bottom-12 h-28 w-28 rounded-full bg-[#FFE2B8]" />
+        <div className="absolute left-10 top-10 h-56 w-56 rounded-full bg-[#E6F2EF] blur" />
+        <div className="absolute right-16 bottom-12 h-32 w-32 rounded-full bg-[#FFE2B8] blur" />
 
         <div className="relative z-10 mx-auto max-w-[1199px] text-center">
           <h2

@@ -95,7 +95,7 @@ export default function Events() {
       </section>
 
       {/* ===================== */}
-      {/* Event Spotlight (Static for now) */}
+      {/* Event Spotlight */}
       {/* ===================== */}
       <section className="w-full bg-white py-24">
         <div className="mx-auto max-w-[1199px] px-6 sm:px-8">
@@ -119,13 +119,17 @@ export default function Events() {
                 className="text-(--black)/70 leading-relaxed"
                 style={{ fontFamily: "Quicksand" }}
               >
-                Supported by local businesses and community partners, this
-                youth-led initiative delivered meals and hope across Laredo.
+                In a heartening display of community solidarity, Nourish Laredo’s Youth Drive took center stage this holiday season. 
+                Supported by a network of local businesses and community partners, this youth-led initiative went beyond simple food 
+                distribution — it delivered a message of hope and belonging. Our student volunteers coordinated every detail, from 
+                sourcing holiday essentials to hand-packing meal kits that ensured 20 local families could gather around a full 
+                Thanksgiving table. This project, recently highlighted by the Laredo Morning Times, stands as a testament to the 
+                power of our youth to lead, inspire, and make a tangible difference in the lives of our neighbors.
               </p>
 
               <div className="mt-10">
                 <Link
-                  to="/get-involved"
+                  to="/getinvolved#volunteer-form"
                   className="inline-flex items-center justify-center rounded-md bg-[#F26B4F] px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-[#F26B4F] hover:border hover:border-[#F26B4F]"
                   style={{ fontFamily: "Quicksand" }}
                 >
@@ -159,6 +163,10 @@ export default function Events() {
       {/* CTA */}
       {/* ===================== */}
       <section className="relative w-full bg-[#FDEEE6] py-24 overflow-hidden">
+
+        <div className="absolute -bottom-12 -left-12 h-64 w-64 rounded-full bg-[#FBE3A3]/40 md:h-80 md:w-80 blur" />
+        <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-[#D1E9E3]/50 md:h-64 md:w-64 blur" /> 
+
         <div className="relative z-10 mx-auto max-w-[1199px] px-6 sm:px-8 text-center">
           <h2
             className="mb-4 text-3xl sm:text-4xl font-semibold text-(--black)"

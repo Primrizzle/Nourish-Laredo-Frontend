@@ -1,11 +1,53 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
   Phone,
   MapPin,
+  Check,       
+  AlertCircle, 
+  Loader2      
 } from "lucide-react"; 
 
 export default function Footer() {
+  // 1. STATE MANAGEMENT
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); 
+  const [message, setMessage] = useState("");
+
+  // 2. HANDLE NEWSLETTER SUBMIT
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    setMessage("");
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/newsletter/subscribe/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok || res.status === 200) {
+        setStatus("success");
+        setMessage(data.message || "You're on the list!");
+        setEmail(""); 
+      } else {
+        setStatus("error");
+        const errorMsg = data.email ? data.email[0] : "Something went wrong.";
+        setMessage(errorMsg);
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setMessage("Connection failed. Try again.");
+    }
+  };
+
   return (
     <footer className="w-full bg-white border-t border-(--secondary)" style={{fontFamily: "Quicksand"}}>
       {/* Top Footer */}
@@ -18,7 +60,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-gray-600 leading-relaxed">
-            Nourishing our community with compassion and dignity since 2018.
+            Nourishing our community with compassion and dignity since 2020.
           </p>
         </div>
 
@@ -33,6 +75,7 @@ export default function Footer() {
             <li className="hover:text-(--primary)"><Link to="/events">Upcoming Events</Link></li>
             <li className="hover:text-(--primary)"><Link to="/getinvolved">Volunteer</Link></li>
             <li className="hover:text-(--primary)"><Link to="/partners">Our Partners</Link></li>
+            <li className="hover:text-(--primary)"><Link to="/donate">Donate Today</Link></li>
           </ul>
         </div>
 
@@ -68,31 +111,50 @@ export default function Footer() {
             Stay updated on our latest news and events.
           </p>
 
-          <form className="flex gap-2">
+          <form onSubmit={handleSubscribe} className="flex gap-2">
             <input
               type="email"
               placeholder="Your email"
-              className="flex-1 px-3 py-2 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-(--secondary)"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === "success" || status === "loading"}
+              className="flex-1 px-3 py-2 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-(--secondary) disabled:bg-gray-100"
             />
             <button
               type="submit"
-              className="
+              disabled={status === "success" || status === "loading"}
+              className={`
                 px-4 
                 py-2 
                 rounded-md 
-                bg-(--secondary) 
                 text-white 
                 text-sm 
                 font-semibold 
-                hover:bg-opacity-90 
-                hover:border 
-                hover:border-(--secondary) 
-                hover:bg-(--white)
-                hover:text-(--secondary)"
+                flex items-center justify-center gap-2
+                transition-all
+                ${status === "success" 
+                  ? "bg-green-500 hover:bg-green-600" 
+                  : "bg-(--secondary) hover:bg-opacity-90 hover:border hover:border-(--secondary) hover:bg-(--white) hover:text-(--secondary)"
+                }
+              `}
             >
-              Subscribe
+              {status === "loading" ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : status === "success" ? (
+                <Check className="h-4 w-4" />
+              ) : (
+                "Subscribe"
+              )}
             </button>
           </form>
+
+          {/* Status Message Area */}
+          {message && (
+            <p className={`mt-2 text-xs flex items-center gap-1 ${status === "error" ? "text-red-500" : "text-green-600"}`}>
+              {status === "error" && <AlertCircle className="h-3 w-3" />}
+              {message}
+            </p>
+          )}
         </div>
       </div>
 

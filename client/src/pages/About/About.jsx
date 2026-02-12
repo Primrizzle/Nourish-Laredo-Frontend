@@ -2,6 +2,7 @@ import { useState } from "react";
 import {Link} from "react-router-dom";
 
 import AboutHero from "../../assets/about/AboutHeroImage.jpg";
+import FoundersPhoto from "../../assets/about/Founders.jpg";
 import WhiteTarget from "../../components/icons/WhiteTargetIcon.jsx";
 import IncreasingArrow from "../../components/icons/IncreasingArrowIcon.jsx";
 import YoungFounders from "../../assets/about/OriginPic.png";
@@ -31,26 +32,29 @@ export default function About() {
         className="
           relative
           flex
-          items-center
+          items-end
           justify-center
           h-[70vh]
           min-h-[500px]
           w-full
           overflow-hidden
+          pb-20
         "
       >
         {/* Background Image */}
         <img
-          src={AboutHero}
+          src={FoundersPhoto}
           alt="Awards ceremony"
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "50% 35%"}}
         />
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-(--secondary)/65" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl px-6 text-center text-white">
+        <div className="relative z-10 max-w-4xl px-6 text-center text-white "
+             style={{ objectPosition:  "50% 0%"}}>
           <h1
             className="mb-4 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl"
             style={{ fontFamily: "Poppins" }}
@@ -146,7 +150,7 @@ export default function About() {
             <div className="space-y-5 text-(--black) leading-relaxed"
                 style={{ fontFamily: "Quicksand"}}>
               <p>
-                Nourish Laredo was founded in 2023 by a group of local high school
+                Nourish Laredo was founded in 2020 by a group of local high school
                 students who saw families in their neighborhoods facing hunger
                 and chose to act. Rather than waiting for change, they organized
                 their first small meal drive to provide food and hope where it
@@ -158,14 +162,14 @@ export default function About() {
                 parking lot has grown into a comprehensive youth-led
                 organization that coordinates food aid across Laredo. Our
                 founders believed that young people could make a real
-                difference—and they were right.
+                difference — and they were right.
               </p>
 
               <p>
                 Today, Nourish Laredo partners with local businesses, food banks,
                 and community leaders to deliver thousands of meals each month.
                 What makes us unique is our model of youth leadership: students
-                don’t just volunteer—they organize, plan, and lead every step of
+                don’t just volunteer — they organize, plan, and lead every step of
                 the mission.
               </p>
             </div>
@@ -181,7 +185,7 @@ export default function About() {
                 <li className="flex items-center gap-4">
                   <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--white)"
                         style={{ fontFamily: "Caveat Brush"}}>
-                    2023
+                    2020
                   </span>
                   <span className="text-(--black)"
                         style={{ fontFamily: "Quicksand"}}>
@@ -192,7 +196,7 @@ export default function About() {
                 <li className="flex items-center gap-4">
                   <span className="rounded-md bg-(--tertiary) px-3 py-1 text-lg font-semibold text-(--white)"
                         style={{ fontFamily: "Caveat Brush"}}>
-                    2024
+                    2022
                   </span>
                   <span className="text-(--black)"
                         style={{ fontFamily: "Quicksand"}}>
@@ -423,7 +427,7 @@ export default function About() {
             className="mb-4 text-3xl font-semibold text-(--black)"
             style={{ fontFamily: "Poppins" }}
           >
-            Our Impact Since 2018
+            Our Impact Since 2020
           </h2>
 
           <p
