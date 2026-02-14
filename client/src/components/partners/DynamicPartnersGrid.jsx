@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Building2 } from "lucide-react";
+import { API_BASE_URL } from "../../config";
 
 export default function DynamicPartnersGrid() {
   const [partners, setPartners] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('${API_BASE_URL}/api/partners/')
+    fetch(`${API_BASE_URL}/api/partners/`)
       .then((res) => res.json())
       .then((data) => {
         setPartners(data);

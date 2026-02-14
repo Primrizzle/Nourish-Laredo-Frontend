@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Building2, User, Mail, Phone, Globe, Briefcase } from 'lucide-react';
+import { API_BASE_URL } from "../../config";
 
 export default function PartnerInquiry() {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ export default function PartnerInquiry() {
     setStatus("submitting");
 
     try {
-      const response = await fetch("${API_BASE_URL}/api/partners/inquiry/", {
+      const response = await fetch(`${API_BASE_URL}/api/partners/inquiry/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

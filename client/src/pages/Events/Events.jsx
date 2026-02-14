@@ -8,12 +8,14 @@ import EventCalendar from "../../components/events/EventCalendar.jsx";
 import BagPacking from "../../assets/events/bag-packing.jpg";
 import EventSpotlight from "../../assets/events/lori-tori-matt-bags.jpg";
 
+import { API_BASE_URL } from "../../config";
+
 export default function Events() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("${API_BASE_URL}/api/events/")
+    fetch(`${API_BASE_URL}/api/events/`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);

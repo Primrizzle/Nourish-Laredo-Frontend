@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_BASE_URL } from "../../config";
 
 export default function VolunteerForm() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ export default function VolunteerForm() {
     setLoading(true);
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/volunteer-signup/", {
+      const res = await fetch(`${API_BASE_URL}/api/volunteer-signup/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

@@ -9,6 +9,8 @@ import {
   Loader2      
 } from "lucide-react"; 
 
+import { API_BASE_URL } from "../../config";
+
 export default function Footer() {
   // 1. STATE MANAGEMENT
   const [email, setEmail] = useState("");
@@ -24,7 +26,7 @@ export default function Footer() {
     setMessage("");
 
     try {
-      const res = await fetch("${API_BASE_URL}/api/newsletter/subscribe/", {
+      const res = await fetch(`${API_BASE_URL}/api/newsletter/subscribe/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
