@@ -6,7 +6,7 @@ export default function DynamicPartnersGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/partners/')
+    fetch('${API_BASE_URL}/api/partners/')
       .then((res) => res.json())
       .then((data) => {
         setPartners(data);
@@ -42,7 +42,7 @@ export default function DynamicPartnersGrid() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF6F4] overflow-hidden">
                 {partner.logo ? (
                   <img 
-                    src={`http://127.0.0.1:8000${partner.logo}`} 
+                    src={`${API_BASE_URL}${partner.logo}`} 
                     alt={partner.name} 
                     className="h-full w-full object-cover"
                   />
