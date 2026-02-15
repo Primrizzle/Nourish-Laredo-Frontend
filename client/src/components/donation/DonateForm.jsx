@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef  } from "react";
 import { Heart } from "lucide-react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { API_BASE_URL } from "../../config";
+const API_BASE_URL = "https://web-production-d5735.up.railway.app";
 
 
 export default function DonationForm() {

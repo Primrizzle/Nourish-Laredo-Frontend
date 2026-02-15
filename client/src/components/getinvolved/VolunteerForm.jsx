@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API_BASE_URL } from "../../config";
+const API_BASE_URL = "https://web-production-d5735.up.railway.app";
 
 export default function VolunteerForm() {
   const [formData, setFormData] = useState({

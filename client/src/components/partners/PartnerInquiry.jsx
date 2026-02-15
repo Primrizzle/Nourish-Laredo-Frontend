@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Building2, User, Mail, Phone, Globe, Briefcase } from 'lucide-react';
-import { API_BASE_URL } from "../../config";
+const API_BASE_URL = "https://web-production-d5735.up.railway.app";
 
 export default function PartnerInquiry() {
   const [formData, setFormData] = useState({

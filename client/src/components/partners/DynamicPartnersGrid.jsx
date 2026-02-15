@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Building2 } from "lucide-react";
-import { API_BASE_URL } from "../../config";
+const API_BASE_URL = "https://web-production-d5735.up.railway.app";
 
 export default function DynamicPartnersGrid() {
   const [partners, setPartners] = useState([]);

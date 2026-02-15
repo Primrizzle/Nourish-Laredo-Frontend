@@ -8,7 +8,7 @@ import EventCalendar from "../../components/events/EventCalendar.jsx";
 import BagPacking from "../../assets/events/bag-packing.jpg";
 import EventSpotlight from "../../assets/events/lori-tori-matt-bags.jpg";
 
-import { API_BASE_URL } from "../../config";
+const API_BASE_URL = "https://web-production-d5735.up.railway.app";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
