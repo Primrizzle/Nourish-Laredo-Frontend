@@ -34,7 +34,7 @@ export default function DonationForm() {
     };
 
     const res = await fetch(
-      `${import.meta.env.VITE_API_BASE_URL}/api/donations/checkout/`,
+      `${API_BASE_URL}/api/donations/checkout/`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

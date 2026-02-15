@@ -7,14 +7,14 @@ export default function DynamicPartnersGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/partners/`)
+    fetch(h(`${API_BASE_URL}/api/partners/`))
       .then((res) => res.json())
       .then((data) => {
         setPartners(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetching partners:", err);
+        console.error("Error fetch(hing partners:", err);)
         setLoading(false);
       });
   }, []);
