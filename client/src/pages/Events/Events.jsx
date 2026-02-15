@@ -15,14 +15,14 @@ export default function Events() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(h(`${API_BASE_URL}/api/events/`))
+    fetch((`${API_BASE_URL}/api/events/`))
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetch(hing events:", err);
+        console.error("Error fetching events:", err);
         setLoading(false);
       });
   }, []);
