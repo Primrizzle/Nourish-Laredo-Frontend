@@ -40,30 +40,46 @@ export default function Contact() {
     e.preventDefault();
     setStatus({ loading: true, submitted: false, error: null });
 
-    console.log("Submitting contact form to backend...");
+    console.log("--- FORM SUBMISSION START ---");
+    console.log("Target URL:", `${API_BASE_URL}/api/contact/`);
+    console.log("Data Payload:", formData);
 
     try {
       const response = await fetch(`${API_BASE_URL}/api/contact/`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify(formData),
       });
 
+      console.log("Response Status:", response.status);
+
       if (response.ok) {
+        const jsonResponse = await response.json();
+        console.log("Server Response Data:", jsonResponse);
         setStatus({ loading: false, submitted: true, error: null });
         setFormData({ name: "", email: "", phone: "", subject: "General Inquiry", message: "" });
       } else {
+        // This part is crucial: it captures WHY the backend rejected it
         const errorData = await response.json();
-        throw new Error(JSON.stringify(errorData));
+        console.error("Backend Validation Error:", errorData);
+        setStatus({ 
+          loading: false, 
+          submitted: false, 
+          error: `Server rejected data: ${JSON.stringify(errorData)}` 
+        });
       }
     } catch (err) {
-      console.error("Form Submission Error:", err);
+      console.error("Network/Fetch Error:", err);
       setStatus({ 
         loading: false, 
         submitted: false, 
-        error: "Oops! We couldn't send your message. Please try again." 
+        error: "Network error: Could not reach the server." 
       });
     }
+    console.log("--- FORM SUBMISSION END ---");
   };
 
   return (
