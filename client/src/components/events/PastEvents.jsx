@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+const API_BASE_URL = "https://web-production-d5735.up.railway.app";
 
 export default function PastEvents({ events = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
