@@ -89,7 +89,7 @@ export default function Home() {
             </div>
 
             <h3 className="text-4xl font-bold text-(--black)" style={{ fontFamily: "Caveat Brush" }}>
-              5,000+
+              7,000+
             </h3>
             <p className="text-(--black)" style={{ fontFamily: "Quicksand" }}>
               Meals Served
