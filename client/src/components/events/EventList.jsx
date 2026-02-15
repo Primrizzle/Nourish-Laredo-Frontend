@@ -23,36 +23,46 @@ export default function EventList({ events }) {
         return (
           <div
             key={event.id}
-            className={`rounded-xl bg-white p-6 shadow-sm text-left border-t-4 ${variant.border}`}
+            className={`rounded-xl bg-white overflow-hidden shadow-sm text-left border-t-4 ${variant.border}`}
           >
-            <h3
-              className="mb-2 text-lg font-semibold text-(--black)"
-              style={{ fontFamily: "Poppins" }}
-            >
-              {event.title}
-            </h3>
+            {event.image && (
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-48 object-cover"
+              />
+            )}
+            
+            <div className="p-6">
+              <h3
+                className="mb-2 text-lg font-semibold text-(--black)"
+                style={{ fontFamily: "Poppins" }}
+              >
+                {event.title}
+              </h3>
 
-            <ul
-              className="mb-4 space-y-2 text-sm text-(--black)/70"
-              style={{ fontFamily: "Quicksand" }}
-            >
-              <li className="flex items-center gap-2">
-                <Calendar className={`h-4 w-4 ${variant.icon}`} />
-                {new Date(event.date).toLocaleDateString()}
-              </li>
+              <ul
+                className="mb-4 space-y-2 text-sm text-(--black)/70"
+                style={{ fontFamily: "Quicksand" }}
+              >
+                <li className="flex items-center gap-2">
+                  <Calendar className={`h-4 w-4 ${variant.icon}`} />
+                  {new Date(event.date).toLocaleDateString()}
+                </li>
 
-              <li className="flex items-center gap-2">
-                <MapPin className={`h-4 w-4 ${variant.icon}`} />
-                {event.location}
-              </li>
-            </ul>
+                <li className="flex items-center gap-2">
+                  <MapPin className={`h-4 w-4 ${variant.icon}`} />
+                  {event.location}
+                </li>
+              </ul>
 
-            <p
-              className="mt-auto text-sm text-(--black)/70 line-clamp-3"
-              style={{ fontFamily: "Quicksand" }}
-            >
-              {event.description}
-            </p>
+              <p
+                className="mt-auto text-sm text-(--black)/70 line-clamp-3"
+                style={{ fontFamily: "Quicksand" }}
+              >
+                {event.description}
+              </p>
+            </div>
           </div>
         );
       })}
