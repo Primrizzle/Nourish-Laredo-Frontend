@@ -22,7 +22,7 @@ export default function Events() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetch(hing events:", err);)
+        console.error("Error fetch(hing events:", err);
         setLoading(false);
       });
   }, []);

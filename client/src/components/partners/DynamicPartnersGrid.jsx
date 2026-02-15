@@ -14,7 +14,7 @@ export default function DynamicPartnersGrid() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetch(hing partners:", err);)
+        console.error("Error fetch(hing partners:", err);
         setLoading(false);
       });
   }, []);

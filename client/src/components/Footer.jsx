@@ -26,7 +26,7 @@ export default function Footer() {
     setMessage("");
 
     try {
-      const res = await fetch(h(`${API_BASE_URL}/api/newsletter/subscribe/`, {)
+      const res = await fetch(`${API_BASE_URL}/api/newsletter/subscribe/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
