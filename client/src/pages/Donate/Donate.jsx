@@ -88,7 +88,7 @@ export default function Donate() {
                   <Heart className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <p className="text-3xl font-bold text-[#3BAEA0]" style={{ fontFamily: "Caveat Brush" }}>10,000+</p>
+              <p className="text-3xl font-bold text-[#3BAEA0]" style={{ fontFamily: "Caveat Brush" }}>7,000+</p>
               <p className="mt-2 text-sm text-(--black)/70" style={{ fontFamily: "Quicksand" }}>Meals Served</p>
             </div>
 
