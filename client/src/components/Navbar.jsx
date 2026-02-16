@@ -32,7 +32,8 @@ export default function Navbar() {
           <Link to="/getinvolved" className="hover:text-(--primary)">Get Involved</Link>
           <Link to="/events" className="hover:text-(--primary)">Events</Link>
           <Link to="/partners" className="hover:text-(--primary)">Partners</Link>
-          <Link to="/contact" className="hover:text-(--primary)">Contact</Link>
+          {/*<Link to="/contact" className="hover:text-(--primary)">Contact</Link>*/}
+          
 
           {/* Donate Button */}
           <Link

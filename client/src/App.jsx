@@ -39,7 +39,9 @@ export default function App() {
                 <Donate />
               </Elements>
             } />
-          <Route path="contact" element={<Contact />} />
+
+            {/*<Route path="contact" element={<Contact />} /> */}
+          
  
         </Route>
 
