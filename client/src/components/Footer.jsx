@@ -1,59 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Mail,
-  Phone,
   MapPin,
-  Check,       
-  AlertCircle, 
-  Loader2      
 } from "lucide-react"; 
 
-const API_BASE_URL = "https://web-production-d5735.up.railway.app";
-
 export default function Footer() {
-  // 1. STATE MANAGEMENT
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); 
-  const [message, setMessage] = useState("");
-
-  // 2. HANDLE NEWSLETTER SUBMIT
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setStatus("loading");
-    setMessage("");
-
-    try {
-      const res = await fetch(`${API_BASE_URL}/api/newsletter/subscribe/`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok || res.status === 200) {
-        setStatus("success");
-        setMessage(data.message || "You're on the list!");
-        setEmail(""); 
-      } else {
-        setStatus("error");
-        const errorMsg = data.email ? data.email[0] : "Something went wrong.";
-        setMessage(errorMsg);
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-      setMessage("Connection failed. Try again.");
-    }
-  };
-
   return (
     <footer className="w-full bg-white border-t border-(--secondary)" style={{fontFamily: "Quicksand"}}>
-      {/* Top Footer */}
-      <div className="w-full max-w-[1199px] mx-auto px-6 sm:px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      {/* Top Footer - Changed md:grid-cols-4 to md:grid-cols-3 */}
+      <div className="w-full max-w-[1199px] mx-auto px-6 sm:px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
 
         {/* Logo + Mission */}
         <div className="flex flex-col gap-4">
@@ -101,62 +56,6 @@ export default function Footer() {
               hello@nourishlaredo.org
             </li>
           </ul>
-        </div>
-
-        {/* Newsletter */}
-        <div>
-          <h4 className="font-semibold text-(--secondary) mb-4">
-            Newsletter
-          </h4>
-
-          <p className="text-sm text-gray-600 mb-4">
-            Stay updated on our latest news and events.
-          </p>
-
-          <form onSubmit={handleSubscribe} className="flex gap-2">
-            <input
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={status === "success" || status === "loading"}
-              className="flex-1 px-3 py-2 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-(--secondary) disabled:bg-gray-100"
-            />
-            <button
-              type="submit"
-              disabled={status === "success" || status === "loading"}
-              className={`
-                px-4 
-                py-2 
-                rounded-md 
-                text-white 
-                text-sm 
-                font-semibold 
-                flex items-center justify-center gap-2
-                transition-all
-                ${status === "success" 
-                  ? "bg-green-500 hover:bg-green-600" 
-                  : "bg-(--secondary) hover:bg-opacity-90 hover:border hover:border-(--secondary) hover:bg-(--white) hover:text-(--secondary)"
-                }
-              `}
-            >
-              {status === "loading" ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : status === "success" ? (
-                <Check className="h-4 w-4" />
-              ) : (
-                "Subscribe"
-              )}
-            </button>
-          </form>
-
-          {/* Status Message Area */}
-          {message && (
-            <p className={`mt-2 text-xs flex items-center gap-1 ${status === "error" ? "text-red-500" : "text-green-600"}`}>
-              {status === "error" && <AlertCircle className="h-3 w-3" />}
-              {message}
-            </p>
-          )}
         </div>
       </div>
 
