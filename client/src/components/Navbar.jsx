@@ -86,7 +86,8 @@ export default function Navbar() {
             <Link to="/getinvolved" className="hover:text-(--primary)" onClick={() => setIsMenuOpen(false)}>Get Involved</Link>
             <Link to="/events" className="hover:text-(--primary)" onClick={() => setIsMenuOpen(false)}>Events</Link>
             <Link to="/partners" className="hover:text-(--primary)" onClick={() => setIsMenuOpen(false)}>Partners</Link>
-            <Link to="/contact" className="hover:text-(--primary)" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            {/* <Link to="/contact" className="hover:text-(--primary)" onClick={() => setIsMenuOpen(false)}>Contact</Link>*/ }
+            
             
             {/* Mobile Donate Button */}
             <Link
